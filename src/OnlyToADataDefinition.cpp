@@ -4,8 +4,8 @@ OnlyToADataDefinition::OnlyToADataDefinition(std::string fileName, std::string t
     this->ToA = new TTreeReaderValue<Double_t>(*this->m_treeReader, "ToA");
 }
 
-std::string OnlyToADataDefinition::GetPrimarySortedBranch(){
-    return "ToA";
+void * OnlyToADataDefinition::GetPrimarySortedBranch(){
+    return (void*)this->ToA;
 }
 
 SingleDataEntry * OnlyToADataDefinition::GetEntry(){

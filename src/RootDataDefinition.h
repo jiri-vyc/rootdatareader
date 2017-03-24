@@ -35,6 +35,6 @@ class RootDataDefinition{
         std::string GetFileName();
 
         // Methods that HAVE TO be overriden in child classes
-        virtual std::string GetPrimarySortedBranch() = 0;
+        virtual void* GetPrimarySortedBranch() = 0;
         virtual SingleDataEntry * GetEntry() = 0;
 };

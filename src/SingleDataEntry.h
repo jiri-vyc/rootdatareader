@@ -8,7 +8,13 @@
 #endif
 
 using namespace rapidjson;
+/**
+Abstract class representing a data entry to be retrieved from the ROOT file.
 
+Specifies its attributes and their types, way how to print them or serialize them.
+
+Can be printed to a stream, can be serialized to JSON.
+*/
 class SingleDataEntry {
     private:
 

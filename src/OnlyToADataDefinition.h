@@ -9,6 +9,6 @@ class OnlyToADataDefinition: public RootDataDefinition {
         SinglePixelToA * m_dataEntry = new SinglePixelToA();
     public:
         OnlyToADataDefinition(std::string fileName, std::string treeName);
-        std::string GetPrimarySortedBranch();
+        void * GetPrimarySortedBranch();
         SingleDataEntry * GetEntry();
 };
