@@ -5,6 +5,9 @@ TTreeReader * RootDataDefinition::GetReader(){
 }
 
 TTree * RootDataDefinition::GetTree(){
+    if (!this->m_tree){
+        this->m_tree = (TTree*)(this->GetFile()->Get(this->GetTreeName().c_str()));
+    }
     return this->m_tree;
 }
 
@@ -21,6 +24,7 @@ std::string RootDataDefinition::GetFileName(){
 }
 
 RootDataDefinition::RootDataDefinition(std::string fileName, std::string treeName){
+    this->m_tree = nullptr;
     this->m_treeName = treeName;
     this->m_fileName = fileName;
     this->m_rootFile = new TFile(fileName.c_str());

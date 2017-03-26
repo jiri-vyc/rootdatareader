@@ -1,5 +1,6 @@
 #pragma once
 #include "RootDataDefinition.h"
+#include "DataEntryInterval.h"
 #include <exception>
 
 /** 
@@ -14,12 +15,8 @@ class RootDataReader {
     private:
         /// Specifies the definition of the structure of the data in the root file
         RootDataDefinition * m_definition;
-        /// Specifies the root TFile with the data
-        TFile * m_rootFile;
-        /// Specifies the name of the TTree within the TFile containing the data
-        std::string m_treeName;
         /// ROOT TTreeReader for accessing the values in ROOT TTree TBranches
-        TTreeReader * m_reader;
+        TTreeReader * m_treeReader;
         /// Check if all necessary requirements are set up for this reader to begin reading
         bool AllReadyToRead();
     public:
@@ -33,4 +30,5 @@ class RootDataReader {
         /// @return false if there was an error and printing couldn't happen
         bool PrintFirst();
         SingleDataEntry * GetEntryAt(unsigned int index);
+        DataEntryInterval * GetInterval(unsigned int indexFrom, unsigned int indexTo);
 };
