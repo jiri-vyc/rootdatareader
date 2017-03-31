@@ -3,7 +3,7 @@
 #include "SingleDataEntry.h"
 
 /**
-* Represents one individial pixel hit with only one (double) ToA value
+@brief Class defining the data object containing only single value (of type double) - ToA
 */
 class SinglePixelToA: public SingleDataEntry {
 private:

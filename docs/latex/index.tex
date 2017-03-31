@@ -1,0 +1,136 @@
+Simple reader and (not only J\+S\+O\+N) serializer for data in R\+O\+O\+T scientific framework format.
+
+\subsubsection*{What is this project good for?}
+
+This project is aimed for developers who have to or want to work with any arbitrary data stored in C\+E\+R\+N's R\+O\+O\+T format without writing complicated proprietary readers, converters and such. This project lets you simply define format of the data, and read them. Without the hassle.
+
+Motivation was increasing popularity of web visualization tools that work with and display scientific data originally stored in the R\+O\+O\+T format. Goal was to provide simple and general way how to read the R\+O\+O\+T data in {\itshape any} format and get them to Java\+Script in the most convenient format (read J\+S\+O\+N).
+
+\subsubsection*{Simple usage example}
+
+
+\begin{DoxyCode}
+\hyperlink{classRootDataDefinition}{RootDataDefinition} * definition;        \textcolor{comment}{// General definition of data }
+\hyperlink{classRootDataReader}{RootDataReader} * dataReader;            \textcolor{comment}{// The reader}
+dataReader = \textcolor{keyword}{new} \hyperlink{classRootDataReader}{RootDataReader}();      \textcolor{comment}{// Initialize}
+definition = \textcolor{keyword}{new} \hyperlink{classOnlyToADataDefinition}{OnlyToADataDefinition}(\textcolor{stringliteral}{"data/testFile1.root"}, \textcolor{stringliteral}{"Datatree"});  \textcolor{comment}{//
+       Initializing concrete data definition}
+
+dataReader->\hyperlink{classRootDataReader_ad670745df69f90ea6578d7c29cab716f}{SetDataDefinition}(definition);  \textcolor{comment}{// Tell the reader to use this data definition}
+
+cout << dataReader->\hyperlink{classRootDataReader_a76a02dd2cc6f4cde896ce9180048671b}{GetInterval}(0, 5)->\hyperlink{classDataEntryInterval_ad27bffbb603c300714090c809ee58570}{JSONify}() << endl;
+\end{DoxyCode}
+ This will nicely, simply print (interval of entries on indexes 0 to 5)\+: 
+\begin{DoxyCode}
+\{
+  \textcolor{stringliteral}{"Size"}:5,
+  \textcolor{stringliteral}{"Entries"}:[
+    \{\textcolor{stringliteral}{"ToA"}:481258120.3125\},\{\textcolor{stringliteral}{"ToA"}:481258120.3125\},\{\textcolor{stringliteral}{"ToA"}:481258120.3125\},\{\textcolor{stringliteral}{"ToA"}:481258120.3125\},\{\textcolor{stringliteral}{"ToA"}:
+      481258120.3125\}
+  ]
+\}
+\end{DoxyCode}
+ \subsubsection*{So how does it work and how do I use it for my data?}
+
+There are three main components of the project\+:
+
+
+\begin{DoxyItemize}
+\item \hyperlink{classRootDataReader}{Root\+Data\+Reader}
+
+Leave this class as is, use its A\+P\+I to your heart's content. One of its method is \hyperlink{classRootDataReader_ad670745df69f90ea6578d7c29cab716f}{Root\+Data\+Reader\+::\+Set\+Data\+Definition()}, where you assign the definition, where the data you want to read are and what structure do they have. Its only parameter has to be of type \hyperlink{classRootDataDefinition}{Root\+Data\+Definition}.
+\item \hyperlink{classRootDataDefinition}{Root\+Data\+Definition}
+
+This is where the definition of the data happens. It describes which data, where, and how they are stored in the root file. It describes the types and names of the branches you will be working with. It is an abstract class and only dictates you which methods you have to have in your child class. Extend this class, define the types and names of values you will have in your data (T\+O\+D\+O\+:example). Each of the values represent a single value stored in the tree branch and will be automatically filled. Then, implement the Get\+Entry() method. In this method, manipulate the values from the branches that you specified as you want and save the result into object of type \hyperlink{classSingleDataEntry}{Single\+Data\+Entry} and return it.
+\item \hyperlink{classSingleDataEntry}{Single\+Data\+Entry}
+
+This is the class which represents one single data object you want to be working with. It doesn't have to correspond 1\+:1 with the data stored in root files and defined in \hyperlink{classRootDataDefinition}{Root\+Data\+Definition}. You have stored 2 parts of the desired object's single attribute in 2 separate branches? No problem, combine them in defined way in the \hyperlink{classRootDataDefinition}{Root\+Data\+Definition} and store them in single value in \hyperlink{classSingleDataEntry}{Single\+Data\+Entry}. This is the resulting object (representing real one) that you want to be manipulating, visualizing, researching. No matter how the data are physically stored in the files. It can be complex particle cluster, a frame, or a simple object with only one value (as in T\+O\+D\+O\+:example \hyperlink{classSinglePixelToA}{Single\+Pixel\+To\+A}). To get such object, extend this class(\+Single\+Data\+Entry), define your concrete entry's attributes, implement your own Getters and Setters if needed and implement the virtual methods Print() and J\+S\+O\+Nify(), specifying, how you want to print/serialize your values (you can see T\+O\+D\+O\+:example here).
+
+You can have data stored in two different ways (different trees, different branches), but you want to get the same resulting data from them? No problem either, you can have several different Root\+Data\+Definitions, which define and manipulate the data in different way, but stores them into single (same) \hyperlink{classSingleDataEntry}{Single\+Data\+Entry}. The other way around? Also no problem, define two Root\+Data\+Definitions to read the exact same data, but save them into different (\hyperlink{classSingleDataEntry}{Single\+Data\+Entry}) objects.
+\end{DoxyItemize}
+
+\subsubsection*{So what can I do with it then?}
+
+For example this\+:
+
+
+\begin{DoxyCode}
+dataReader = \textcolor{keyword}{new} \hyperlink{classRootDataReader}{RootDataReader}();      \textcolor{comment}{// Initialize}
+definition = \textcolor{keyword}{new} TPX3HitDataDefinition(\textcolor{stringliteral}{"data/testFile1.root"}, \textcolor{stringliteral}{"Datatree"});  \textcolor{comment}{// Initializing concrete data
+       definition}
+
+dataReader->\hyperlink{classRootDataReader_ad670745df69f90ea6578d7c29cab716f}{SetDataDefinition}(definition);  \textcolor{comment}{// Tell the reader to use this data definition}
+
+cout << dataReader->GetEntry(0)->JSONify() << endl;
+\end{DoxyCode}
+
+
+Prints\+:
+
+
+\begin{DoxyCode}
+\{\textcolor{stringliteral}{"index"}: 0, \textcolor{stringliteral}{"PixX"}: 250, \textcolor{stringliteral}{"PixY"}: 154, \textcolor{stringliteral}{"ToT"}: 332, \textcolor{stringliteral}{"ToA"}:481258120.3125, \textcolor{stringliteral}{"triggerNo"}: 0\}
+\end{DoxyCode}
+
+
+And adding this\+:
+
+
+\begin{DoxyCode}
+definition2 = \textcolor{keyword}{new} TPX3ClusterDataDefinition(\textcolor{stringliteral}{"data/testFile1.root"}, \textcolor{stringliteral}{"Clustertree"});
+dataReader->\hyperlink{classRootDataReader_ad670745df69f90ea6578d7c29cab716f}{SetDataDefinition}(definition2);
+
+cout << dataReader->GetEntry(0)->JSONify() << endl;
+\end{DoxyCode}
+
+
+Prints\+:
+
+
+\begin{DoxyCode}
+\{
+    \textcolor{stringliteral}{"clstrSize"}: 3, 
+    \textcolor{stringliteral}{"PixX"}: [250, 102, 51], 
+    \textcolor{stringliteral}{"PixY"}: [154, 252, 189], 
+    \textcolor{stringliteral}{"ToT"}: [332, 12, 105], 
+    \textcolor{stringliteral}{"ToA"}: [481258120.3125, 481258200.625, 481258220.0], 
+    \textcolor{stringliteral}{"clstrType"}: \textcolor{stringliteral}{"Small Blob"}, 
+    \textcolor{stringliteral}{"clstrVolCentroidX"}: 110, 
+    \textcolor{stringliteral}{"clstrVolCentroidY"}: 188
+\}
+\end{DoxyCode}
+
+
+\subsubsection*{How to set it up and use it?}
+
+You need only few prerequisites\+:
+
+
+\begin{DoxyItemize}
+\item R\+O\+O\+T Installed
+\item g++ 4.\+9+
+\item make
+\end{DoxyItemize}
+
+There is a Makefile included in the project, so all you have to do to compile the example is to run {\ttfamily make} in the project's folder.
+
+When you add your classes and implementations, add them to the Makefile\+:
+
+
+\begin{DoxyCode}
+1 rootdatareader: main.o reader.o definition.o pixeltoa.o definitiontoa.o interval.o mynewclass.o
+2 mynewclass.o:
+3     $(CC) $(CFLAGS) src/MyNewClass.cpp -o build/MyNewClass.o
+\end{DoxyCode}
+
+
+\subsubsection*{Contribution guidelines}
+
+
+\begin{DoxyItemize}
+\item T\+O\+D\+O
+\end{DoxyItemize}
+
+\subsubsection*{Who do I talk to?}
+
+\href{mailto:jiri.vyc@gmail.com}{\tt jiri.\+vyc@gmail.\+com} 

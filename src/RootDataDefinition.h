@@ -7,7 +7,7 @@
 #include <string>
 
 /** 
-Abstract interface for defining a structure of the data in the ROOT files and the structure of the data to be read from the ROOT files.
+@brief Abstract interface for defining a structure of the data in the ROOT files, process how to read these data and save them to desired data objects.
 
 All data structure definitions have to derive from this interface and have to contain methods described by it.
 

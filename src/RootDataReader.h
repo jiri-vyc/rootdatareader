@@ -1,10 +1,9 @@
 #pragma once
 #include "RootDataDefinition.h"
 #include "DataEntryInterval.h"
-#include <exception>
 
 /** 
-Class responsible for reading data of various structure in the ROOT format (TTree within TFile). 
+@brief Class responsible for reading data of various structure in the ROOT format (TTree within TFile). 
 
 RootDataReader provides a facade for accessing arbitrary data from ROOT files, providing them in C++ custom interval class, standard C++ vector or a JSON format.
 

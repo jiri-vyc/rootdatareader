@@ -1,0 +1,184 @@
+\hypertarget{classRootDataDefinition}{\section{Root\+Data\+Definition Class Reference}
+\label{classRootDataDefinition}\index{Root\+Data\+Definition@{Root\+Data\+Definition}}
+}
+
+
+Abstract interface for defining a structure of the data in the R\+O\+O\+T files, process how to read these data and save them to desired data objects.  
+
+
+
+
+{\ttfamily \#include $<$Root\+Data\+Definition.\+h$>$}
+
+
+
+Inheritance diagram for Root\+Data\+Definition\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classRootDataDefinition__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Root\+Data\+Definition\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classRootDataDefinition__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classRootDataDefinition_aeb304a3a15314058d6663c45c7f8f00e}{Root\+Data\+Definition} (std\+::string file\+Name, std\+::string tree\+Name)
+\item 
+virtual \hyperlink{classRootDataDefinition_a40a873fba464bcb796a444db890385dc}{$\sim$\+Root\+Data\+Definition} ()
+\item 
+T\+Tree\+Reader $\ast$ \hyperlink{classRootDataDefinition_a48a885b44c954506728f71f07d927506}{Get\+Reader} ()
+\item 
+T\+Tree $\ast$ \hyperlink{classRootDataDefinition_a20ed89d6d2483a0f76cd2fb131fcc597}{Get\+Tree} ()
+\item 
+T\+File $\ast$ \hyperlink{classRootDataDefinition_ab26897ffdd1de5e6572f6067770066b3}{Get\+File} ()
+\item 
+std\+::string \hyperlink{classRootDataDefinition_acc7728b0a9315cacc6b9c1fae38ed490}{Get\+Tree\+Name} ()
+\item 
+std\+::string \hyperlink{classRootDataDefinition_a56f206839275fdf5af290b372c4d7e13}{Get\+File\+Name} ()
+\item 
+virtual void $\ast$ \hyperlink{classRootDataDefinition_a720d0b9c122b778f2b338792de9e8c47}{Get\+Primary\+Sorted\+Branch} ()=0
+\item 
+virtual \hyperlink{classSingleDataEntry}{Single\+Data\+Entry} $\ast$ \hyperlink{classRootDataDefinition_a60bb9c8884bdaca62fa342bfa6cf0bdb}{Get\+Entry} ()=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T\+Tree $\ast$ \hyperlink{classRootDataDefinition_a941ec585a2aa533bc30889a382e54f50}{m\+\_\+tree}
+\item 
+\hyperlink{classSingleDataEntry}{Single\+Data\+Entry} $\ast$ \hyperlink{classRootDataDefinition_a4d36dedf6212d7096b0020e9c1be9247}{m\+\_\+data\+Entry}
+\item 
+std\+::string \hyperlink{classRootDataDefinition_a46394bbb1863baa4abcd8cbd0413fa88}{m\+\_\+tree\+Name}
+\item 
+T\+File $\ast$ \hyperlink{classRootDataDefinition_af00a892a1b940abf9265066391b67304}{m\+\_\+root\+File}
+\item 
+std\+::string \hyperlink{classRootDataDefinition_a03154139db8613ec02cd57fd84d8c0e8}{m\+\_\+file\+Name}
+\item 
+T\+Tree\+Reader $\ast$ \hyperlink{classRootDataDefinition_a919827bdd245e61c0f54676d59cc7448}{m\+\_\+tree\+Reader}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract interface for defining a structure of the data in the R\+O\+O\+T files, process how to read these data and save them to desired data objects. 
+
+All data structure definitions have to derive from this interface and have to contain methods described by it.
+
+Defines\+:
+\begin{DoxyItemize}
+\item which R\+O\+O\+T file, tree and branches are used.
+\item which data to read from the R\+O\+O\+T tree
+\item which data object (derived from \hyperlink{classSingleDataEntry}{Single\+Data\+Entry}) will be used to represent and store these data
+\item how to get values of the data object (\hyperlink{classSingleDataEntry}{Single\+Data\+Entry}) from the values in the R\+O\+O\+T tree and its branches 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classRootDataDefinition_aeb304a3a15314058d6663c45c7f8f00e}{\index{Root\+Data\+Definition@{Root\+Data\+Definition}!Root\+Data\+Definition@{Root\+Data\+Definition}}
+\index{Root\+Data\+Definition@{Root\+Data\+Definition}!Root\+Data\+Definition@{Root\+Data\+Definition}}
+\subsubsection[{Root\+Data\+Definition}]{\setlength{\rightskip}{0pt plus 5cm}Root\+Data\+Definition\+::\+Root\+Data\+Definition (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{file\+Name, }
+\item[{std\+::string}]{tree\+Name}
+\end{DoxyParamCaption}
+)}}\label{classRootDataDefinition_aeb304a3a15314058d6663c45c7f8f00e}
+\hypertarget{classRootDataDefinition_a40a873fba464bcb796a444db890385dc}{\index{Root\+Data\+Definition@{Root\+Data\+Definition}!````~Root\+Data\+Definition@{$\sim$\+Root\+Data\+Definition}}
+\index{````~Root\+Data\+Definition@{$\sim$\+Root\+Data\+Definition}!Root\+Data\+Definition@{Root\+Data\+Definition}}
+\subsubsection[{$\sim$\+Root\+Data\+Definition}]{\setlength{\rightskip}{0pt plus 5cm}virtual Root\+Data\+Definition\+::$\sim$\+Root\+Data\+Definition (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classRootDataDefinition_a40a873fba464bcb796a444db890385dc}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classRootDataDefinition_a60bb9c8884bdaca62fa342bfa6cf0bdb}{\index{Root\+Data\+Definition@{Root\+Data\+Definition}!Get\+Entry@{Get\+Entry}}
+\index{Get\+Entry@{Get\+Entry}!Root\+Data\+Definition@{Root\+Data\+Definition}}
+\subsubsection[{Get\+Entry}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Single\+Data\+Entry}$\ast$ Root\+Data\+Definition\+::\+Get\+Entry (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classRootDataDefinition_a60bb9c8884bdaca62fa342bfa6cf0bdb}
+
+
+Implemented in \hyperlink{classOnlyToADataDefinition_ab2f4346c01cf342390c392cf1e36eebe}{Only\+To\+A\+Data\+Definition}.
+
+\hypertarget{classRootDataDefinition_ab26897ffdd1de5e6572f6067770066b3}{\index{Root\+Data\+Definition@{Root\+Data\+Definition}!Get\+File@{Get\+File}}
+\index{Get\+File@{Get\+File}!Root\+Data\+Definition@{Root\+Data\+Definition}}
+\subsubsection[{Get\+File}]{\setlength{\rightskip}{0pt plus 5cm}T\+File $\ast$ Root\+Data\+Definition\+::\+Get\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRootDataDefinition_ab26897ffdd1de5e6572f6067770066b3}
+\hypertarget{classRootDataDefinition_a56f206839275fdf5af290b372c4d7e13}{\index{Root\+Data\+Definition@{Root\+Data\+Definition}!Get\+File\+Name@{Get\+File\+Name}}
+\index{Get\+File\+Name@{Get\+File\+Name}!Root\+Data\+Definition@{Root\+Data\+Definition}}
+\subsubsection[{Get\+File\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Root\+Data\+Definition\+::\+Get\+File\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRootDataDefinition_a56f206839275fdf5af290b372c4d7e13}
+\hypertarget{classRootDataDefinition_a720d0b9c122b778f2b338792de9e8c47}{\index{Root\+Data\+Definition@{Root\+Data\+Definition}!Get\+Primary\+Sorted\+Branch@{Get\+Primary\+Sorted\+Branch}}
+\index{Get\+Primary\+Sorted\+Branch@{Get\+Primary\+Sorted\+Branch}!Root\+Data\+Definition@{Root\+Data\+Definition}}
+\subsubsection[{Get\+Primary\+Sorted\+Branch}]{\setlength{\rightskip}{0pt plus 5cm}virtual void$\ast$ Root\+Data\+Definition\+::\+Get\+Primary\+Sorted\+Branch (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classRootDataDefinition_a720d0b9c122b778f2b338792de9e8c47}
+
+
+Implemented in \hyperlink{classOnlyToADataDefinition_af2025f39b59dc8bd50a281f5034ed47a}{Only\+To\+A\+Data\+Definition}.
+
+\hypertarget{classRootDataDefinition_a48a885b44c954506728f71f07d927506}{\index{Root\+Data\+Definition@{Root\+Data\+Definition}!Get\+Reader@{Get\+Reader}}
+\index{Get\+Reader@{Get\+Reader}!Root\+Data\+Definition@{Root\+Data\+Definition}}
+\subsubsection[{Get\+Reader}]{\setlength{\rightskip}{0pt plus 5cm}T\+Tree\+Reader $\ast$ Root\+Data\+Definition\+::\+Get\+Reader (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRootDataDefinition_a48a885b44c954506728f71f07d927506}
+\hypertarget{classRootDataDefinition_a20ed89d6d2483a0f76cd2fb131fcc597}{\index{Root\+Data\+Definition@{Root\+Data\+Definition}!Get\+Tree@{Get\+Tree}}
+\index{Get\+Tree@{Get\+Tree}!Root\+Data\+Definition@{Root\+Data\+Definition}}
+\subsubsection[{Get\+Tree}]{\setlength{\rightskip}{0pt plus 5cm}T\+Tree $\ast$ Root\+Data\+Definition\+::\+Get\+Tree (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRootDataDefinition_a20ed89d6d2483a0f76cd2fb131fcc597}
+\hypertarget{classRootDataDefinition_acc7728b0a9315cacc6b9c1fae38ed490}{\index{Root\+Data\+Definition@{Root\+Data\+Definition}!Get\+Tree\+Name@{Get\+Tree\+Name}}
+\index{Get\+Tree\+Name@{Get\+Tree\+Name}!Root\+Data\+Definition@{Root\+Data\+Definition}}
+\subsubsection[{Get\+Tree\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Root\+Data\+Definition\+::\+Get\+Tree\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRootDataDefinition_acc7728b0a9315cacc6b9c1fae38ed490}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classRootDataDefinition_a4d36dedf6212d7096b0020e9c1be9247}{\index{Root\+Data\+Definition@{Root\+Data\+Definition}!m\+\_\+data\+Entry@{m\+\_\+data\+Entry}}
+\index{m\+\_\+data\+Entry@{m\+\_\+data\+Entry}!Root\+Data\+Definition@{Root\+Data\+Definition}}
+\subsubsection[{m\+\_\+data\+Entry}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Single\+Data\+Entry}$\ast$ Root\+Data\+Definition\+::m\+\_\+data\+Entry\hspace{0.3cm}{\ttfamily [protected]}}}\label{classRootDataDefinition_a4d36dedf6212d7096b0020e9c1be9247}
+\hypertarget{classRootDataDefinition_a03154139db8613ec02cd57fd84d8c0e8}{\index{Root\+Data\+Definition@{Root\+Data\+Definition}!m\+\_\+file\+Name@{m\+\_\+file\+Name}}
+\index{m\+\_\+file\+Name@{m\+\_\+file\+Name}!Root\+Data\+Definition@{Root\+Data\+Definition}}
+\subsubsection[{m\+\_\+file\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Root\+Data\+Definition\+::m\+\_\+file\+Name\hspace{0.3cm}{\ttfamily [protected]}}}\label{classRootDataDefinition_a03154139db8613ec02cd57fd84d8c0e8}
+\hypertarget{classRootDataDefinition_af00a892a1b940abf9265066391b67304}{\index{Root\+Data\+Definition@{Root\+Data\+Definition}!m\+\_\+root\+File@{m\+\_\+root\+File}}
+\index{m\+\_\+root\+File@{m\+\_\+root\+File}!Root\+Data\+Definition@{Root\+Data\+Definition}}
+\subsubsection[{m\+\_\+root\+File}]{\setlength{\rightskip}{0pt plus 5cm}T\+File$\ast$ Root\+Data\+Definition\+::m\+\_\+root\+File\hspace{0.3cm}{\ttfamily [protected]}}}\label{classRootDataDefinition_af00a892a1b940abf9265066391b67304}
+\hypertarget{classRootDataDefinition_a941ec585a2aa533bc30889a382e54f50}{\index{Root\+Data\+Definition@{Root\+Data\+Definition}!m\+\_\+tree@{m\+\_\+tree}}
+\index{m\+\_\+tree@{m\+\_\+tree}!Root\+Data\+Definition@{Root\+Data\+Definition}}
+\subsubsection[{m\+\_\+tree}]{\setlength{\rightskip}{0pt plus 5cm}T\+Tree$\ast$ Root\+Data\+Definition\+::m\+\_\+tree\hspace{0.3cm}{\ttfamily [protected]}}}\label{classRootDataDefinition_a941ec585a2aa533bc30889a382e54f50}
+\hypertarget{classRootDataDefinition_a46394bbb1863baa4abcd8cbd0413fa88}{\index{Root\+Data\+Definition@{Root\+Data\+Definition}!m\+\_\+tree\+Name@{m\+\_\+tree\+Name}}
+\index{m\+\_\+tree\+Name@{m\+\_\+tree\+Name}!Root\+Data\+Definition@{Root\+Data\+Definition}}
+\subsubsection[{m\+\_\+tree\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Root\+Data\+Definition\+::m\+\_\+tree\+Name\hspace{0.3cm}{\ttfamily [protected]}}}\label{classRootDataDefinition_a46394bbb1863baa4abcd8cbd0413fa88}
+\hypertarget{classRootDataDefinition_a919827bdd245e61c0f54676d59cc7448}{\index{Root\+Data\+Definition@{Root\+Data\+Definition}!m\+\_\+tree\+Reader@{m\+\_\+tree\+Reader}}
+\index{m\+\_\+tree\+Reader@{m\+\_\+tree\+Reader}!Root\+Data\+Definition@{Root\+Data\+Definition}}
+\subsubsection[{m\+\_\+tree\+Reader}]{\setlength{\rightskip}{0pt plus 5cm}T\+Tree\+Reader$\ast$ Root\+Data\+Definition\+::m\+\_\+tree\+Reader\hspace{0.3cm}{\ttfamily [protected]}}}\label{classRootDataDefinition_a919827bdd245e61c0f54676d59cc7448}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{RootDataDefinition_8h}{Root\+Data\+Definition.\+h}\item 
+src/\hyperlink{RootDataDefinition_8cpp}{Root\+Data\+Definition.\+cpp}\end{DoxyCompactItemize}

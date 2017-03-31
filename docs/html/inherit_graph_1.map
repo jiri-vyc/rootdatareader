@@ -1,0 +1,4 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classRootDataDefinition.html" title="Abstract interface for defining a structure of the data in the ROOT files, process how to read these ..." alt="" coords="5,5,139,32"/>
+<area shape="rect" id="node2" href="$classOnlyToADataDefinition.html" title="Class defining the structure of data within root file containing only one value (of type double) &#45; To..." alt="" coords="187,5,343,32"/>
+</map>

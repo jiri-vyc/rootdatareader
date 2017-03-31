@@ -1,0 +1,121 @@
+\hypertarget{classRootDataReader}{\section{Root\+Data\+Reader Class Reference}
+\label{classRootDataReader}\index{Root\+Data\+Reader@{Root\+Data\+Reader}}
+}
+
+
+Class responsible for reading data of various structure in the R\+O\+O\+T format (T\+Tree within T\+File).  
+
+
+
+
+{\ttfamily \#include $<$Root\+Data\+Reader.\+h$>$}
+
+
+
+Collaboration diagram for Root\+Data\+Reader\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{classRootDataReader__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classRootDataReader_aa06f1264959329cb49e41a7670e6a59f}{Root\+Data\+Reader} ()
+\item 
+\hyperlink{classRootDataReader_a9f6b5d9e26e27128a445ac3529414f6f}{$\sim$\+Root\+Data\+Reader} ()
+\item 
+T\+Tree\+Reader $\ast$ \hyperlink{classRootDataReader_a749a090b6c0404f9ff08873a2aef63d7}{Get\+Tree\+Reader} ()
+\item 
+void \hyperlink{classRootDataReader_ad670745df69f90ea6578d7c29cab716f}{Set\+Data\+Definition} (\hyperlink{classRootDataDefinition}{Root\+Data\+Definition} $\ast$definition)
+\item 
+void \hyperlink{classRootDataReader_a22eac63f0710d5cce4a1d0a16210ce8f}{Scan} ()
+\item 
+bool \hyperlink{classRootDataReader_aac09b1313c7ce2c180b5efede781eef6}{Print\+First} ()
+\item 
+\hyperlink{classSingleDataEntry}{Single\+Data\+Entry} $\ast$ \hyperlink{classRootDataReader_abd5fbaefe8631cf251e9aeade874fa5d}{Get\+Entry\+At} (unsigned int index)
+\item 
+\hyperlink{classDataEntryInterval}{Data\+Entry\+Interval} $\ast$ \hyperlink{classRootDataReader_a76a02dd2cc6f4cde896ce9180048671b}{Get\+Interval} (unsigned int index\+From, unsigned int index\+To)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class responsible for reading data of various structure in the R\+O\+O\+T format (T\+Tree within T\+File). 
+
+\hyperlink{classRootDataReader}{Root\+Data\+Reader} provides a facade for accessing arbitrary data from R\+O\+O\+T files, providing them in C++ custom interval class, standard C++ vector or a J\+S\+O\+N format.
+
+After setting the proper \hyperlink{classRootDataDefinition}{Root\+Data\+Definition}, \hyperlink{classRootDataReader}{Root\+Data\+Reader} will know the structure of the data it will be working with. Then it can read data of such structure and retrieve them as a whole, as a std\+::vector, as a interval, print them to stdout etc. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classRootDataReader_aa06f1264959329cb49e41a7670e6a59f}{\index{Root\+Data\+Reader@{Root\+Data\+Reader}!Root\+Data\+Reader@{Root\+Data\+Reader}}
+\index{Root\+Data\+Reader@{Root\+Data\+Reader}!Root\+Data\+Reader@{Root\+Data\+Reader}}
+\subsubsection[{Root\+Data\+Reader}]{\setlength{\rightskip}{0pt plus 5cm}Root\+Data\+Reader\+::\+Root\+Data\+Reader (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRootDataReader_aa06f1264959329cb49e41a7670e6a59f}
+\hypertarget{classRootDataReader_a9f6b5d9e26e27128a445ac3529414f6f}{\index{Root\+Data\+Reader@{Root\+Data\+Reader}!````~Root\+Data\+Reader@{$\sim$\+Root\+Data\+Reader}}
+\index{````~Root\+Data\+Reader@{$\sim$\+Root\+Data\+Reader}!Root\+Data\+Reader@{Root\+Data\+Reader}}
+\subsubsection[{$\sim$\+Root\+Data\+Reader}]{\setlength{\rightskip}{0pt plus 5cm}Root\+Data\+Reader\+::$\sim$\+Root\+Data\+Reader (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRootDataReader_a9f6b5d9e26e27128a445ac3529414f6f}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classRootDataReader_abd5fbaefe8631cf251e9aeade874fa5d}{\index{Root\+Data\+Reader@{Root\+Data\+Reader}!Get\+Entry\+At@{Get\+Entry\+At}}
+\index{Get\+Entry\+At@{Get\+Entry\+At}!Root\+Data\+Reader@{Root\+Data\+Reader}}
+\subsubsection[{Get\+Entry\+At}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Single\+Data\+Entry} $\ast$ Root\+Data\+Reader\+::\+Get\+Entry\+At (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classRootDataReader_abd5fbaefe8631cf251e9aeade874fa5d}
+\hypertarget{classRootDataReader_a76a02dd2cc6f4cde896ce9180048671b}{\index{Root\+Data\+Reader@{Root\+Data\+Reader}!Get\+Interval@{Get\+Interval}}
+\index{Get\+Interval@{Get\+Interval}!Root\+Data\+Reader@{Root\+Data\+Reader}}
+\subsubsection[{Get\+Interval}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Data\+Entry\+Interval} $\ast$ Root\+Data\+Reader\+::\+Get\+Interval (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index\+From, }
+\item[{unsigned int}]{index\+To}
+\end{DoxyParamCaption}
+)}}\label{classRootDataReader_a76a02dd2cc6f4cde896ce9180048671b}
+\hypertarget{classRootDataReader_a749a090b6c0404f9ff08873a2aef63d7}{\index{Root\+Data\+Reader@{Root\+Data\+Reader}!Get\+Tree\+Reader@{Get\+Tree\+Reader}}
+\index{Get\+Tree\+Reader@{Get\+Tree\+Reader}!Root\+Data\+Reader@{Root\+Data\+Reader}}
+\subsubsection[{Get\+Tree\+Reader}]{\setlength{\rightskip}{0pt plus 5cm}T\+Tree\+Reader $\ast$ Root\+Data\+Reader\+::\+Get\+Tree\+Reader (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRootDataReader_a749a090b6c0404f9ff08873a2aef63d7}
+\hypertarget{classRootDataReader_aac09b1313c7ce2c180b5efede781eef6}{\index{Root\+Data\+Reader@{Root\+Data\+Reader}!Print\+First@{Print\+First}}
+\index{Print\+First@{Print\+First}!Root\+Data\+Reader@{Root\+Data\+Reader}}
+\subsubsection[{Print\+First}]{\setlength{\rightskip}{0pt plus 5cm}bool Root\+Data\+Reader\+::\+Print\+First (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRootDataReader_aac09b1313c7ce2c180b5efede781eef6}
+Prints the first entry in the specified T\+Tree within specified T\+File, according to specified \hyperlink{classRootDataDefinition}{Root\+Data\+Definition} \begin{DoxyReturn}{Returns}
+true if success 
+
+false if there was an error and printing couldn't happen 
+\end{DoxyReturn}
+\hypertarget{classRootDataReader_a22eac63f0710d5cce4a1d0a16210ce8f}{\index{Root\+Data\+Reader@{Root\+Data\+Reader}!Scan@{Scan}}
+\index{Scan@{Scan}!Root\+Data\+Reader@{Root\+Data\+Reader}}
+\subsubsection[{Scan}]{\setlength{\rightskip}{0pt plus 5cm}void Root\+Data\+Reader\+::\+Scan (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRootDataReader_a22eac63f0710d5cce4a1d0a16210ce8f}
+\hypertarget{classRootDataReader_ad670745df69f90ea6578d7c29cab716f}{\index{Root\+Data\+Reader@{Root\+Data\+Reader}!Set\+Data\+Definition@{Set\+Data\+Definition}}
+\index{Set\+Data\+Definition@{Set\+Data\+Definition}!Root\+Data\+Reader@{Root\+Data\+Reader}}
+\subsubsection[{Set\+Data\+Definition}]{\setlength{\rightskip}{0pt plus 5cm}void Root\+Data\+Reader\+::\+Set\+Data\+Definition (
+\begin{DoxyParamCaption}
+\item[{{\bf Root\+Data\+Definition} $\ast$}]{definition}
+\end{DoxyParamCaption}
+)}}\label{classRootDataReader_ad670745df69f90ea6578d7c29cab716f}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{RootDataReader_8h}{Root\+Data\+Reader.\+h}\item 
+src/\hyperlink{RootDataReader_8cpp}{Root\+Data\+Reader.\+cpp}\end{DoxyCompactItemize}

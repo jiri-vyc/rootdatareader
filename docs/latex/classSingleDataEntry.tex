@@ -1,0 +1,145 @@
+\hypertarget{classSingleDataEntry}{\section{Single\+Data\+Entry Class Reference}
+\label{classSingleDataEntry}\index{Single\+Data\+Entry@{Single\+Data\+Entry}}
+}
+
+
+Abstract class representing a data object to be retrieved from the R\+O\+O\+T file.  
+
+
+
+
+{\ttfamily \#include $<$Single\+Data\+Entry.\+h$>$}
+
+
+
+Inheritance diagram for Single\+Data\+Entry\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{classSingleDataEntry__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Single\+Data\+Entry\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{classSingleDataEntry__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSingleDataEntry_a64f6763312181cd57157bafe94f9a4ee}{Single\+Data\+Entry} ()
+\begin{DoxyCompactList}\small\item\em Implicit base constructor, does nothing. \end{DoxyCompactList}\item 
+virtual \hyperlink{classSingleDataEntry_a0b6b6ebca677d8cd87062db2f354f364}{$\sim$\+Single\+Data\+Entry} ()
+\begin{DoxyCompactList}\small\item\em Virtual destructor. Each derived class has to dispose of their own garbage. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classSingleDataEntry_a64fb67b2f11f2fe64394059f1b29a248}{J\+S\+O\+Nify} (rapidjson\+::\+Writer$<$ rapidjson\+::\+String\+Buffer $>$ \&writer)=0
+\begin{DoxyCompactList}\small\item\em Writes the J\+S\+O\+N representation of this one single entry into the specified J\+S\+O\+N writer. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{classSingleDataEntry_a9e48725016d6fbd6bd674d5b299dbb12}{J\+S\+O\+Nify} ()
+\begin{DoxyCompactList}\small\item\em Returns J\+S\+O\+N string serialization of this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classSingleDataEntry_a20d7a043eaf55d45c6e079cc9baee49c}{print} (std\+::ostream \&os) const =0
+\begin{DoxyCompactList}\small\item\em Prints the data entry into specified stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classSingleDataEntry_a5201741bff3d8419b28d56bda6a8dc2d}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classSingleDataEntry}{Single\+Data\+Entry} \&entry)
+\begin{DoxyCompactList}\small\item\em Prints the data entry using its print function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract class representing a data object to be retrieved from the R\+O\+O\+T file. 
+
+Represents the result object we want to work with after retrieving the data from R\+O\+O\+T files. Specifies the object's attributes and their types, way how to print them or serialize them. The whole object can be printed to a stream, can be serialized to J\+S\+O\+N. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classSingleDataEntry_a64f6763312181cd57157bafe94f9a4ee}{\index{Single\+Data\+Entry@{Single\+Data\+Entry}!Single\+Data\+Entry@{Single\+Data\+Entry}}
+\index{Single\+Data\+Entry@{Single\+Data\+Entry}!Single\+Data\+Entry@{Single\+Data\+Entry}}
+\subsubsection[{Single\+Data\+Entry}]{\setlength{\rightskip}{0pt plus 5cm}Single\+Data\+Entry\+::\+Single\+Data\+Entry (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classSingleDataEntry_a64f6763312181cd57157bafe94f9a4ee}
+
+
+Implicit base constructor, does nothing. 
+
+\hypertarget{classSingleDataEntry_a0b6b6ebca677d8cd87062db2f354f364}{\index{Single\+Data\+Entry@{Single\+Data\+Entry}!````~Single\+Data\+Entry@{$\sim$\+Single\+Data\+Entry}}
+\index{````~Single\+Data\+Entry@{$\sim$\+Single\+Data\+Entry}!Single\+Data\+Entry@{Single\+Data\+Entry}}
+\subsubsection[{$\sim$\+Single\+Data\+Entry}]{\setlength{\rightskip}{0pt plus 5cm}virtual Single\+Data\+Entry\+::$\sim$\+Single\+Data\+Entry (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classSingleDataEntry_a0b6b6ebca677d8cd87062db2f354f364}
+
+
+Virtual destructor. Each derived class has to dispose of their own garbage. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classSingleDataEntry_a64fb67b2f11f2fe64394059f1b29a248}{\index{Single\+Data\+Entry@{Single\+Data\+Entry}!J\+S\+O\+Nify@{J\+S\+O\+Nify}}
+\index{J\+S\+O\+Nify@{J\+S\+O\+Nify}!Single\+Data\+Entry@{Single\+Data\+Entry}}
+\subsubsection[{J\+S\+O\+Nify}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Single\+Data\+Entry\+::\+J\+S\+O\+Nify (
+\begin{DoxyParamCaption}
+\item[{rapidjson\+::\+Writer$<$ rapidjson\+::\+String\+Buffer $>$ \&}]{writer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classSingleDataEntry_a64fb67b2f11f2fe64394059f1b29a248}
+
+
+Writes the J\+S\+O\+N representation of this one single entry into the specified J\+S\+O\+N writer. 
+
+
+
+Implemented in \hyperlink{classSinglePixelToA_afef10aa4fe0b3c4d1676ada1d8ee4195}{Single\+Pixel\+To\+A}.
+
+\hypertarget{classSingleDataEntry_a9e48725016d6fbd6bd674d5b299dbb12}{\index{Single\+Data\+Entry@{Single\+Data\+Entry}!J\+S\+O\+Nify@{J\+S\+O\+Nify}}
+\index{J\+S\+O\+Nify@{J\+S\+O\+Nify}!Single\+Data\+Entry@{Single\+Data\+Entry}}
+\subsubsection[{J\+S\+O\+Nify}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Single\+Data\+Entry\+::\+J\+S\+O\+Nify (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classSingleDataEntry_a9e48725016d6fbd6bd674d5b299dbb12}
+
+
+Returns J\+S\+O\+N string serialization of this object. 
+
+\hypertarget{classSingleDataEntry_a20d7a043eaf55d45c6e079cc9baee49c}{\index{Single\+Data\+Entry@{Single\+Data\+Entry}!print@{print}}
+\index{print@{print}!Single\+Data\+Entry@{Single\+Data\+Entry}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Single\+Data\+Entry\+::print (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{os}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}}\label{classSingleDataEntry_a20d7a043eaf55d45c6e079cc9baee49c}
+
+
+Prints the data entry into specified stream. 
+
+
+
+Implemented in \hyperlink{classSinglePixelToA_a8c38cf1022b32a2fd3bb8aea07269b02}{Single\+Pixel\+To\+A}.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classSingleDataEntry_a5201741bff3d8419b28d56bda6a8dc2d}{\index{Single\+Data\+Entry@{Single\+Data\+Entry}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Single\+Data\+Entry@{Single\+Data\+Entry}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{os, }
+\item[{const {\bf Single\+Data\+Entry} \&}]{entry}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{classSingleDataEntry_a5201741bff3d8419b28d56bda6a8dc2d}
+
+
+Prints the data entry using its print function. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{SingleDataEntry_8h}{Single\+Data\+Entry.\+h}\end{DoxyCompactItemize}

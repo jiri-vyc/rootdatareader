@@ -1,6 +1,5 @@
 #include "RootDataReader.h"
 #include "OnlyToADataDefinition.h"
-#include "SinglePixelToA.h"
 
 #include <typeinfo>
 #include <iostream>

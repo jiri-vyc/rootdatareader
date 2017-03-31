@@ -9,20 +9,20 @@
 
 using namespace rapidjson;
 /**
-Abstract class representing a data entry to be retrieved from the ROOT file.
+@brief Abstract class representing a data object to be retrieved from the ROOT file.
 
-Specifies its attributes and their types, way how to print them or serialize them.
-
-Can be printed to a stream, can be serialized to JSON.
+Represents the result object we want to work with after retrieving the data from ROOT files. Specifies the object's attributes and their types, way how to print them or serialize them. The whole object can be printed to a stream, can be serialized to JSON.
 */
 class SingleDataEntry {
     private:
 
     protected:
-        // Prints the data entry into specified stream
+        /// Prints the data entry into specified stream
         virtual void print(std::ostream& os) const = 0;
     public:
+        /// Implicit base constructor, does nothing
         SingleDataEntry(){};
+        /// Virtual destructor. Each derived class has to dispose of their own garbage
         virtual ~SingleDataEntry(){};
         /// Prints the data entry using its print function
         friend std::ostream& operator<< (std::ostream& os, const SingleDataEntry& entry){

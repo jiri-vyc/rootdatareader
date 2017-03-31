@@ -6,7 +6,8 @@
 class SingleDataEntry;
 
 /**
-The class representing an interval of root data entries. 
+@brief The class representing an interval of root data entries. 
+
 It is a decorator over the std::vector class, as it provides the same functionality of the vector collection
 and only adds some basic function and JSON serialization
 */
@@ -17,7 +18,7 @@ private:
 public:
 	/// Creates an empty interval of size 0
 	DataEntryInterval(){};
-	// Destroys the object and disposes of all the data contained within
+	/// Destroys the object and disposes of all the data contained within
 	~DataEntryInterval();
 	/// Returns all the data from the interval in form of a string-encoded JSON object.
 	std::string JSONify();

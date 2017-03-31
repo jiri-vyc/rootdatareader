@@ -1,5 +1,4 @@
 #include "RootDataReader.h"
-#include <iostream>
 
 RootDataReader::RootDataReader(){
     this->m_definition = nullptr;
