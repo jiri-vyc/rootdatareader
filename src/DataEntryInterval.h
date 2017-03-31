@@ -18,7 +18,7 @@ public:
 	/// Creates an empty interval of size 0
 	DataEntryInterval(){};
 	// Destroys the object and disposes of all the data contained within
-	~DataEntryInterval(){};
+	~DataEntryInterval();
 	/// Returns all the data from the interval in form of a string-encoded JSON object.
 	std::string JSONify();
 	/// Sends all the data from interval to the specified JSON Writer object.

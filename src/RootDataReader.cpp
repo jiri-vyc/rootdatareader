@@ -7,7 +7,9 @@ RootDataReader::RootDataReader(){
 }
 
 RootDataReader::~RootDataReader(){
-
+    if (this->m_interval){
+        delete this->m_interval;
+    }
 }
 
 void RootDataReader::SetDataDefinition(RootDataDefinition * definition){
@@ -37,6 +39,9 @@ SingleDataEntry * RootDataReader::GetEntryAt(unsigned int index){
 }
 
 DataEntryInterval * RootDataReader::GetInterval(unsigned int indexFrom, unsigned int indexTo){
+    if (this->m_interval) {
+        delete this->m_interval;
+    }
     DataEntryInterval * interval = new DataEntryInterval();
     for (unsigned int i = indexFrom; i < indexTo; i++){
         interval->PushBack(this->GetEntryAt(i));

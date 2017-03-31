@@ -13,6 +13,8 @@ Then it can read data of such structure and retrieve them as a whole, as a std::
 */
 class RootDataReader {
     private:
+        /// Last created and returned interval. Keep reference to it for cleanup purposes
+        DataEntryInterval * m_interval = nullptr;
         /// Specifies the definition of the structure of the data in the root file
         RootDataDefinition * m_definition;
         /// ROOT TTreeReader for accessing the values in ROOT TTree TBranches

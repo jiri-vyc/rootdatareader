@@ -23,7 +23,7 @@ class SingleDataEntry {
         virtual void print(std::ostream& os) const = 0;
     public:
         SingleDataEntry(){};
-        ~SingleDataEntry(){};
+        virtual ~SingleDataEntry(){};
         /// Prints the data entry using its print function
         friend std::ostream& operator<< (std::ostream& os, const SingleDataEntry& entry){
             entry.print(os);

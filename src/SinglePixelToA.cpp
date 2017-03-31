@@ -6,6 +6,10 @@ SinglePixelToA::SinglePixelToA(){
 
 }
 
+SinglePixelToA::SinglePixelToA(SinglePixelToA * otherPixel){
+    this->SetToA(otherPixel->GetToA());
+}
+
 SinglePixelToA::~SinglePixelToA(){
 
 }

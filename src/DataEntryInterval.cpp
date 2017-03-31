@@ -2,6 +2,13 @@
 
 using namespace rapidjson;
 
+DataEntryInterval::~DataEntryInterval(){
+	for (unsigned int i = 0; i < this->Size(); i++){
+		delete this->Back();
+		this->PopBack();
+	}
+}
+
 void DataEntryInterval::Clear()
 {
 	this->dataVector.clear();

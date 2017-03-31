@@ -27,7 +27,7 @@ class RootDataDefinition{
         TTreeReader * m_treeReader;
     public:
         RootDataDefinition(std::string fileName, std::string treeName);
-        ~RootDataDefinition(){};
+        virtual ~RootDataDefinition(){};
         TTreeReader * GetReader();
         TTree * GetTree();
         TFile * GetFile();

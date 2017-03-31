@@ -13,6 +13,8 @@ protected:
 public:
 	/// Creates an empty pixel
 	SinglePixelToA();
+	/// Copy constructor
+	SinglePixelToA(SinglePixelToA * otherPixel);
 	/// Implicit destructor
 	~SinglePixelToA();
 	void JSONify(rapidjson::Writer<rapidjson::StringBuffer> & writer);

@@ -8,6 +8,7 @@ class OnlyToADataDefinition: public RootDataDefinition {
     protected:
         SinglePixelToA * m_dataEntry = new SinglePixelToA();
     public:
+        ~OnlyToADataDefinition();
         OnlyToADataDefinition(std::string fileName, std::string treeName);
         void * GetPrimarySortedBranch();
         SingleDataEntry * GetEntry();

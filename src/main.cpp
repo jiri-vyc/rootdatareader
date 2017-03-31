@@ -4,6 +4,7 @@
 
 #include <typeinfo>
 #include <iostream>
+#include <unistd.h>
 
 using namespace std;
 
@@ -16,5 +17,8 @@ int main(void){
 
     dataReader->SetDataDefinition(definition);  // Tell the reader to use this data definition
 
-    cout << dataReader->GetInterval(0, 5)->JSONify() << endl;
+    cout << dataReader->GetInterval(0, 10)->JSONify() << endl;
+
+    delete dataReader;
+    delete definition;
 }
