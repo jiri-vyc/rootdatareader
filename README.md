@@ -1,10 +1,10 @@
 # ROOT Data Reader #
 
-Simple reader and (not only JSON) serializer for data in ROOT scientific framework format.
+Simple reader and (not only [JSON](http://json.org/)) serializer build on [rapidjson](https://github.com/miloyip/rapidjson) for data in [ROOT](https://root.cern.ch/) scientific framework format.
 
 ### What is this project good for? ###
 
-This project is aimed for developers who have to or want to work with any arbitrary data stored in CERN's ROOT format without writing complicated proprietary readers, converters and such. This project lets you simply define format of the data, and read them. Without the hassle.
+This project is aimed for developers who have to or want to work with any arbitrary data stored in [CERN](http://home.cern/)'s [ROOT](https://root.cern.ch/) format without writing complicated proprietary readers, converters and such. This project lets you simply define format of the data, and read them. Without the hassle.
 
 Motivation was increasing popularity of web visualization tools that work with and display scientific data originally stored in the ROOT format. Goal was to provide simple and general way how to read the ROOT data in *any* format and get them to JavaScript in the most convenient format (read JSON).
 
