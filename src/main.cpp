@@ -9,12 +9,12 @@ using namespace std;
 
 int main(void){
 
-    RootDataDefinition * definition;
-    RootDataReader * dataReader;
-    dataReader = new RootDataReader();
-    definition = new OnlyToADataDefinition("data/testFile1.root", "Datatree");
+    RootDataDefinition * definition;        // General definition of data 
+    RootDataReader * dataReader;            // The reader
+    dataReader = new RootDataReader();      // Initialize
+    definition = new OnlyToADataDefinition("data/testFile1.root", "Datatree");  // Assigning concrete data definition
 
-    dataReader->SetDataDefinition(definition);
+    dataReader->SetDataDefinition(definition);  // Tell the reader to use this data definition
 
     cout << dataReader->GetInterval(0, 5)->JSONify() << endl;
 }
