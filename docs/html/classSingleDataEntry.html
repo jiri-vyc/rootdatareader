@@ -126,9 +126,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a20d7a043eaf55d45c6e079cc9baee49c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSingleDataEntry.html#a20d7a043eaf55d45c6e079cc9baee49c">print</a> (std::ostream &amp;os) const =0</td></tr>
-<tr class="memdesc:a20d7a043eaf55d45c6e079cc9baee49c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the data entry into specified stream.  <a href="#a20d7a043eaf55d45c6e079cc9baee49c">More...</a><br /></td></tr>
-<tr class="separator:a20d7a043eaf55d45c6e079cc9baee49c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16006af8d5648c79ee9e6c6ed6c356a2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSingleDataEntry.html#a16006af8d5648c79ee9e6c6ed6c356a2">Print</a> (std::ostream &amp;os) const =0</td></tr>
+<tr class="memdesc:a16006af8d5648c79ee9e6c6ed6c356a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the data entry into specified stream.  <a href="#a16006af8d5648c79ee9e6c6ed6c356a2">More...</a><br /></td></tr>
+<tr class="separator:a16006af8d5648c79ee9e6c6ed6c356a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -139,6 +139,8 @@ Friends</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract class representing a data object to be retrieved from the ROOT file. </p>
 <p>Represents the result object we want to work with after retrieving the data from ROOT files. Specifies the object's attributes and their types, way how to print them or serialize them. The whole object can be printed to a stream, can be serialized to JSON. </p>
+
+<p>Definition at line <a class="el" href="SingleDataEntry_8h_source.html#l00016">16</a> of file <a class="el" href="SingleDataEntry_8h_source.html">SingleDataEntry.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a64f6763312181cd57157bafe94f9a4ee"></a>
 <div class="memitem">
@@ -162,6 +164,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Implicit base constructor, does nothing. </p>
+
+<p>Definition at line <a class="el" href="SingleDataEntry_8h_source.html#l00024">24</a> of file <a class="el" href="SingleDataEntry_8h_source.html">SingleDataEntry.h</a>.</p>
 
 </div>
 </div>
@@ -187,6 +191,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Virtual destructor. Each derived class has to dispose of their own garbage. </p>
+
+<p>Definition at line <a class="el" href="SingleDataEntry_8h_source.html#l00026">26</a> of file <a class="el" href="SingleDataEntry_8h_source.html">SingleDataEntry.h</a>.</p>
 
 </div>
 </div>
@@ -242,9 +248,11 @@ Friends</h2></td></tr>
 
 <p>Returns JSON string serialization of this object. </p>
 
+<p>Definition at line <a class="el" href="SingleDataEntry_8h_source.html#l00035">35</a> of file <a class="el" href="SingleDataEntry_8h_source.html">SingleDataEntry.h</a>.</p>
+
 </div>
 </div>
-<a class="anchor" id="a20d7a043eaf55d45c6e079cc9baee49c"></a>
+<a class="anchor" id="a16006af8d5648c79ee9e6c6ed6c356a2"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -252,7 +260,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void SingleDataEntry::print </td>
+          <td class="memname">virtual void SingleDataEntry::Print </td>
           <td>(</td>
           <td class="paramtype">std::ostream &amp;&#160;</td>
           <td class="paramname"><em>os</em></td><td>)</td>
@@ -268,7 +276,7 @@ Friends</h2></td></tr>
 
 <p>Prints the data entry into specified stream. </p>
 
-<p>Implemented in <a class="el" href="classSinglePixelToA.html#a8c38cf1022b32a2fd3bb8aea07269b02">SinglePixelToA</a>.</p>
+<p>Implemented in <a class="el" href="classSinglePixelToA.html#a8b9d4ef4082473c747157b9b2c1376b0">SinglePixelToA</a>.</p>
 
 </div>
 </div>
@@ -306,6 +314,8 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Prints the data entry using its print function. </p>
+
+<p>Definition at line <a class="el" href="SingleDataEntry_8h_source.html#l00028">28</a> of file <a class="el" href="SingleDataEntry_8h_source.html">SingleDataEntry.h</a>.</p>
 
 </div>
 </div>

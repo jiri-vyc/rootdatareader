@@ -9,7 +9,7 @@ class SinglePixelToA: public SingleDataEntry {
 private:
 	Double_t ToA;
 protected:
-	void print(std::ostream& os) const;
+	void Print(std::ostream& os) const;
 public:
 	/// Creates an empty pixel
 	SinglePixelToA();

@@ -14,7 +14,7 @@ SinglePixelToA::~SinglePixelToA(){
 
 }
 
-void SinglePixelToA::print(std::ostream& os) const{
+void SinglePixelToA::Print(std::ostream& os) const{
     os << this->GetToA();
 }
 

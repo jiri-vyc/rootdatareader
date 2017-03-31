@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.8"/>
-<title>Root Data Reader: src/OnlyToADataDefinition.h Source File</title>
+<title>Root Data Reader: src/OnlyToADataDefinition.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -85,33 +85,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">OnlyToADataDefinition.h</div>  </div>
+<div class="title">OnlyToADataDefinition.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="OnlyToADataDefinition_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="RootDataDefinition_8h.html">RootDataDefinition.h</a>&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="SinglePixelToA_8h.html">SinglePixelToA.h</a>&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classOnlyToADataDefinition.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="classOnlyToADataDefinition.html">OnlyToADataDefinition</a>: <span class="keyword">public</span> <a class="code" href="classRootDataDefinition.html">RootDataDefinition</a> {</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        TTreeReaderValue&lt;Double_t&gt; * ToA;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classOnlyToADataDefinition.html#abb0a23c47fcf037c042e8529163a1e31">   11</a></span>&#160;        <a class="code" href="classSinglePixelToA.html">SinglePixelToA</a> * <a class="code" href="classOnlyToADataDefinition.html#abb0a23c47fcf037c042e8529163a1e31">m_dataEntry</a> = <span class="keyword">new</span> <a class="code" href="classSinglePixelToA.html">SinglePixelToA</a>();</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <a class="code" href="classOnlyToADataDefinition.html#ac3392db2f04c84cfce35bbf12f287357">~OnlyToADataDefinition</a>();</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="classOnlyToADataDefinition.html#aee47039c5d1c4c8714815e0253fca3e3">OnlyToADataDefinition</a>(std::string fileName, std::string treeName);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordtype">void</span> * <a class="code" href="classOnlyToADataDefinition.html#af2025f39b59dc8bd50a281f5034ed47a">GetPrimarySortedBranch</a>();</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="classSingleDataEntry.html">SingleDataEntry</a> * <a class="code" href="classOnlyToADataDefinition.html#ab2f4346c01cf342390c392cf1e36eebe">GetEntry</a>();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;};</div>
+<a href="OnlyToADataDefinition_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="OnlyToADataDefinition_8h.html">OnlyToADataDefinition.h</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
+<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="classOnlyToADataDefinition.html#ac3392db2f04c84cfce35bbf12f287357">    3</a></span>&#160;<a class="code" href="classOnlyToADataDefinition.html#ac3392db2f04c84cfce35bbf12f287357">OnlyToADataDefinition::~OnlyToADataDefinition</a>(){</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;    <span class="keyword">delete</span> this-&gt;<a class="code" href="classOnlyToADataDefinition.html#abb0a23c47fcf037c042e8529163a1e31">m_dataEntry</a>;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="keywordflow">if</span> (this-&gt;ToA) <span class="keyword">delete</span> this-&gt;ToA;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;}</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classOnlyToADataDefinition.html#aee47039c5d1c4c8714815e0253fca3e3">    8</a></span>&#160;<a class="code" href="classOnlyToADataDefinition.html#aee47039c5d1c4c8714815e0253fca3e3">OnlyToADataDefinition::OnlyToADataDefinition</a>(std::string fileName, std::string treeName):<a class="code" href="classRootDataDefinition.html">RootDataDefinition</a>(fileName, treeName){</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    this-&gt;ToA = <span class="keyword">new</span> TTreeReaderValue&lt;Double_t&gt;(*this-&gt;<a class="code" href="classRootDataDefinition.html#a919827bdd245e61c0f54676d59cc7448">m_treeReader</a>, <span class="stringliteral">&quot;ToA&quot;</span>);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classOnlyToADataDefinition.html#af2025f39b59dc8bd50a281f5034ed47a">   12</a></span>&#160;<span class="keywordtype">void</span> * <a class="code" href="classOnlyToADataDefinition.html#af2025f39b59dc8bd50a281f5034ed47a">OnlyToADataDefinition::GetPrimarySortedBranch</a>(){</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">return</span> (<span class="keywordtype">void</span>*)this-&gt;ToA;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classOnlyToADataDefinition.html#ab2f4346c01cf342390c392cf1e36eebe">   16</a></span>&#160;<a class="code" href="classSingleDataEntry.html">SingleDataEntry</a> * <a class="code" href="classOnlyToADataDefinition.html#ab2f4346c01cf342390c392cf1e36eebe">OnlyToADataDefinition::GetEntry</a>(){</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    this-&gt;<a class="code" href="classOnlyToADataDefinition.html#abb0a23c47fcf037c042e8529163a1e31">m_dataEntry</a>-&gt;<a class="code" href="classSinglePixelToA.html#a7c3836057703bd042c89997e3490d3d9">SetToA</a>(**this-&gt;ToA);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classSinglePixelToA.html">SinglePixelToA</a>(this-&gt;<a class="code" href="classOnlyToADataDefinition.html#abb0a23c47fcf037c042e8529163a1e31">m_dataEntry</a>);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+<div class="ttc" id="classRootDataDefinition_html_a919827bdd245e61c0f54676d59cc7448"><div class="ttname"><a href="classRootDataDefinition.html#a919827bdd245e61c0f54676d59cc7448">RootDataDefinition::m_treeReader</a></div><div class="ttdeci">TTreeReader * m_treeReader</div><div class="ttdef"><b>Definition:</b> <a href="RootDataDefinition_8h_source.html#l00027">RootDataDefinition.h:27</a></div></div>
 <div class="ttc" id="classOnlyToADataDefinition_html_ac3392db2f04c84cfce35bbf12f287357"><div class="ttname"><a href="classOnlyToADataDefinition.html#ac3392db2f04c84cfce35bbf12f287357">OnlyToADataDefinition::~OnlyToADataDefinition</a></div><div class="ttdeci">~OnlyToADataDefinition()</div><div class="ttdef"><b>Definition:</b> <a href="OnlyToADataDefinition_8cpp_source.html#l00003">OnlyToADataDefinition.cpp:3</a></div></div>
+<div class="ttc" id="OnlyToADataDefinition_8h_html"><div class="ttname"><a href="OnlyToADataDefinition_8h.html">OnlyToADataDefinition.h</a></div></div>
 <div class="ttc" id="classOnlyToADataDefinition_html_abb0a23c47fcf037c042e8529163a1e31"><div class="ttname"><a href="classOnlyToADataDefinition.html#abb0a23c47fcf037c042e8529163a1e31">OnlyToADataDefinition::m_dataEntry</a></div><div class="ttdeci">SinglePixelToA * m_dataEntry</div><div class="ttdef"><b>Definition:</b> <a href="OnlyToADataDefinition_8h_source.html#l00011">OnlyToADataDefinition.h:11</a></div></div>
-<div class="ttc" id="classOnlyToADataDefinition_html"><div class="ttname"><a href="classOnlyToADataDefinition.html">OnlyToADataDefinition</a></div><div class="ttdoc">Class defining the structure of data within root file containing only one value (of type double) - To...</div><div class="ttdef"><b>Definition:</b> <a href="OnlyToADataDefinition_8h_source.html#l00007">OnlyToADataDefinition.h:7</a></div></div>
 <div class="ttc" id="classSinglePixelToA_html"><div class="ttname"><a href="classSinglePixelToA.html">SinglePixelToA</a></div><div class="ttdoc">Class defining the data object containing only single value (of type double) - ToA. </div><div class="ttdef"><b>Definition:</b> <a href="SinglePixelToA_8h_source.html#l00008">SinglePixelToA.h:8</a></div></div>
 <div class="ttc" id="classSingleDataEntry_html"><div class="ttname"><a href="classSingleDataEntry.html">SingleDataEntry</a></div><div class="ttdoc">Abstract class representing a data object to be retrieved from the ROOT file. </div><div class="ttdef"><b>Definition:</b> <a href="SingleDataEntry_8h_source.html#l00016">SingleDataEntry.h:16</a></div></div>
 <div class="ttc" id="classOnlyToADataDefinition_html_aee47039c5d1c4c8714815e0253fca3e3"><div class="ttname"><a href="classOnlyToADataDefinition.html#aee47039c5d1c4c8714815e0253fca3e3">OnlyToADataDefinition::OnlyToADataDefinition</a></div><div class="ttdeci">OnlyToADataDefinition(std::string fileName, std::string treeName)</div><div class="ttdef"><b>Definition:</b> <a href="OnlyToADataDefinition_8cpp_source.html#l00008">OnlyToADataDefinition.cpp:8</a></div></div>
-<div class="ttc" id="SinglePixelToA_8h_html"><div class="ttname"><a href="SinglePixelToA_8h.html">SinglePixelToA.h</a></div></div>
 <div class="ttc" id="classRootDataDefinition_html"><div class="ttname"><a href="classRootDataDefinition.html">RootDataDefinition</a></div><div class="ttdoc">Abstract interface for defining a structure of the data in the ROOT files, process how to read these ...</div><div class="ttdef"><b>Definition:</b> <a href="RootDataDefinition_8h_source.html#l00020">RootDataDefinition.h:20</a></div></div>
 <div class="ttc" id="classOnlyToADataDefinition_html_af2025f39b59dc8bd50a281f5034ed47a"><div class="ttname"><a href="classOnlyToADataDefinition.html#af2025f39b59dc8bd50a281f5034ed47a">OnlyToADataDefinition::GetPrimarySortedBranch</a></div><div class="ttdeci">void * GetPrimarySortedBranch()</div><div class="ttdef"><b>Definition:</b> <a href="OnlyToADataDefinition_8cpp_source.html#l00012">OnlyToADataDefinition.cpp:12</a></div></div>
-<div class="ttc" id="RootDataDefinition_8h_html"><div class="ttname"><a href="RootDataDefinition_8h.html">RootDataDefinition.h</a></div></div>
+<div class="ttc" id="classSinglePixelToA_html_a7c3836057703bd042c89997e3490d3d9"><div class="ttname"><a href="classSinglePixelToA.html#a7c3836057703bd042c89997e3490d3d9">SinglePixelToA::SetToA</a></div><div class="ttdeci">void SetToA(Double_t ToA)</div><div class="ttdef"><b>Definition:</b> <a href="SinglePixelToA_8cpp_source.html#l00032">SinglePixelToA.cpp:32</a></div></div>
 <div class="ttc" id="classOnlyToADataDefinition_html_ab2f4346c01cf342390c392cf1e36eebe"><div class="ttname"><a href="classOnlyToADataDefinition.html#ab2f4346c01cf342390c392cf1e36eebe">OnlyToADataDefinition::GetEntry</a></div><div class="ttdeci">SingleDataEntry * GetEntry()</div><div class="ttdef"><b>Definition:</b> <a href="OnlyToADataDefinition_8cpp_source.html#l00016">OnlyToADataDefinition.cpp:16</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
