@@ -19,6 +19,9 @@ int main(void){
 
     cout << dataReader->GetInterval(0, 10)->JSONify() << endl;
 
+    cout << "Done." << endl;
+
+
     delete dataReader;
     delete definition;
 }

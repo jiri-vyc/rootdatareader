@@ -3,10 +3,13 @@
 using namespace rapidjson;
 
 DataEntryInterval::~DataEntryInterval(){
+	std::cout << this->Size() << std::endl;
+	std::cout << "Deleting interval" << std::endl;
 	for (unsigned int i = 0; i < this->Size(); i++){
-		delete this->Back();
-		this->PopBack();
+		delete this->At(i);
 	}
+	this->Clear();
+	std::cout << this->Size() << std::endl;
 }
 
 void DataEntryInterval::Clear()

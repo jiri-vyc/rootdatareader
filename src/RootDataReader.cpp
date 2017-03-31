@@ -42,11 +42,11 @@ DataEntryInterval * RootDataReader::GetInterval(unsigned int indexFrom, unsigned
     if (this->m_interval) {
         delete this->m_interval;
     }
-    DataEntryInterval * interval = new DataEntryInterval();
+    this->m_interval = new DataEntryInterval();
     for (unsigned int i = indexFrom; i < indexTo; i++){
-        interval->PushBack(this->GetEntryAt(i));
+        this->m_interval->PushBack(this->GetEntryAt(i));
     }
-    return interval;
+    return this->m_interval;
 }
 
 bool RootDataReader::AllReadyToRead(){
