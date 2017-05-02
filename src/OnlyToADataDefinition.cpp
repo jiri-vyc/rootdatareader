@@ -1,4 +1,5 @@
 #include "OnlyToADataDefinition.h"
+#include <typeinfo>
 
 OnlyToADataDefinition::~OnlyToADataDefinition(){
     delete this->m_dataEntry;

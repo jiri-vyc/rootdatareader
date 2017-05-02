@@ -38,4 +38,13 @@ class RootDataReader {
         /// Returns a single data entry at given index. Entry returned is of type specified in selected RootDataDefinition
         SingleDataEntry * GetEntryAt(unsigned int index);
         DataEntryInterval * GetInterval(unsigned int indexFrom, unsigned int indexTo);
+        /**
+        @brief Returns an index of entry with its value closest to given startValue
+
+        Searches the primary sorted branch (specified by data definition) of the tree for value given by startValue and returns its index. Determines where the values in the tree start to be greated than the parameter.
+        */
+        template <typename T>
+        unsigned int GetStartingIndex(T startValue){
+            return this->m_definition->GetStartingIndex<T>(startValue);
+        }
 };

@@ -59,8 +59,21 @@ class RootDataDefinition{
         TFile * GetFile();
         std::string GetTreeName();
         std::string GetFileName();
+        template <typename T>
+        unsigned int GetStartingIndex(T startValue){
+            T primaryBranch;
+            
+            this->m_treeReader->SetEntry(0);
+
+            primaryBranch = **((TTreeReaderValue<T>*)(this->GetPrimarySortedBranch()));
+
+            std::cout << std::setprecision(15) << primaryBranch << std::endl;
+            std::cout << std::setprecision(15) << startValue << std::endl;
+
+            return 42;
+        }
 
         // Methods that HAVE TO be overriden in child classes
-        virtual void* GetPrimarySortedBranch() = 0;
+        virtual void * GetPrimarySortedBranch() = 0;
         virtual SingleDataEntry * GetEntry() = 0;
 };
