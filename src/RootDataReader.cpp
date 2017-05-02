@@ -20,6 +20,10 @@ void RootDataReader::Scan(){
     this->m_definition->GetTree()->Scan();
 }
 
+void RootDataReader::GetListOfBranches(){
+    this->m_definition->GetTree()->GetListOfBranches()->Print();
+}
+
 bool RootDataReader::PrintFirst(){
     if (!this->AllReadyToRead()){
         return false;

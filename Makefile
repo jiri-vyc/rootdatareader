@@ -4,7 +4,7 @@ CC=g++
 CFLAGS=-Wall -pedantic -ggdb `root-config --cflags` -c
 
 all: rootdatareader
-rootdatareader: main.o reader.o definition.o pixeltoa.o definitiontoa.o interval.o
+rootdatareader: main.o reader.o definition.o pixeltoa.o definitiontoa.o interval.o tpx3hit.o definitiontpx3hit.o
 	$(CC) `root-config --libs --glibs` -lTreePlayer -o release/rootdatareader.o build/*.o
 main.o:
 	$(CC) $(CFLAGS) src/main.cpp -o build/main.o
@@ -16,6 +16,10 @@ pixeltoa.o:
 	$(CC) $(CFLAGS) src/SinglePixelToA.cpp -o build/SinglePixelToA.o
 definitiontoa.o:
 	$(CC) $(CFLAGS) src/OnlyToADataDefinition.cpp -o build/OnlyToADataDefinition.o
+tpx3hit.o:
+	$(CC) $(CFLAGS) src/SingleTPX3Hit.cpp -o build/SingleTPX3Hit.o
+definitiontpx3hit.o:
+	$(CC) $(CFLAGS) src/TPX3HitsDataDefinition.cpp -o build/TPX3HitsDataDefinition.o
 interval.o:
 	$(CC) $(CFLAGS) src/DataEntryInterval.cpp -o build/DataEntryInterval.o
 clean:

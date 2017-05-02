@@ -23,13 +23,19 @@ class RootDataReader {
     public:
         RootDataReader();
         ~RootDataReader();
+        /// Returns a reference to a native ROOT's TTreeReader object
         TTreeReader * GetTreeReader();
+        /// Assigns given data definition to this reader - data read will be in format specified by the definition
         void SetDataDefinition(RootDataDefinition * definition);
+        /// Invokes default functionality of TTree::Scan() of the loaded ROOT TTree - prints contents of the tree
         void Scan();
+        /// Prints a list of all branches within the loaded ROOT TTree, uses TTree::GetListOfBranches() - doesn't have to correspond with used data definition!
+        void GetListOfBranches();
         /// Prints the first entry in the specified TTree within specified TFile, according to specified RootDataDefinition
         /// @return true if success
         /// @return false if there was an error and printing couldn't happen
         bool PrintFirst();
+        /// Returns a single data entry at given index. Entry returned is of type specified in selected RootDataDefinition
         SingleDataEntry * GetEntryAt(unsigned int index);
         DataEntryInterval * GetInterval(unsigned int indexFrom, unsigned int indexTo);
 };
