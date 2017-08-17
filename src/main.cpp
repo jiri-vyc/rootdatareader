@@ -23,7 +23,7 @@ int main(void){
     Double_t search = 481258120;
     cout << "Index: " << dataReader->GetStartingIndex<Double_t>(search) << endl;
 
-    dataReader->Scan();
+    //dataReader->Scan();
     cout << "Done." << endl;
 
 

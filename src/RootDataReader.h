@@ -45,6 +45,18 @@ class RootDataReader {
         */
         template <typename T>
         unsigned int GetStartingIndex(T startValue){
-            return this->m_definition->GetStartingIndex<T>(startValue);
+
+            Long64_t entriesCnt = this->m_treeReader->GetEntries(false);
+
+            Long64_t currIndex = entriesCnt/2;
+            
+            this->m_treeReader->SetEntry(currIndex);
+
+            std::cout << "Value of primary sorted branch in half of the tree: " << std::setprecision(15)<< **((TTreeReaderValue<T>*)this->m_definition->GetPrimarySortedBranch()) << std::endl;
+            std::cout << "On index n. " << currIndex << std::endl;
+
+            return 0;
+
+            //return this->m_definition->GetStartingIndex<T>(startValue);
         }
 };

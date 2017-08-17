@@ -92,6 +92,26 @@ Prints:
 }
 ~~~~~~~~~~~~~~~
 
+### Also it can do sorting & binary search!
+
+You just have to specify primary sorted branch of the used tree in the RootDataDefinition class and the RootDataReader does everything for you. You provide the value you want to find, and the reader will use its native, fast binary search algorithm to find the index on which this value in the tree/root file is. With any type of the data definition, with any (comparable by <) type of the branch value. Use like this:
+
+Specify that the primary branch, which is sorted and by which the searching will happen, is the "ToA" branch:
+~~~~~~~~~~~~~~~{.c}
+void * OnlyToADataDefinition::GetPrimarySortedBranch(){
+    return (void*)this->ToA;
+}
+~~~~~~~~~~~~~~~
+
+and then just search for specific value (and specify its type)
+
+~~~~~~~~~~~~~~~{.c}
+cout << "Index: " << dataReader->GetStartingIndex<Double_t>(481258120) << endl;
+~~~~~~~~~~~~~~~
+
+and the result is the index on which the values of the "ToA" branch start to be bigger than 481258120, found by binary search.
+
+
 ### How to set it up and use it? ###
 
 You need only few prerequisites:
