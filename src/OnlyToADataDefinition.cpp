@@ -11,7 +11,6 @@ OnlyToADataDefinition::OnlyToADataDefinition(std::string fileName, std::string t
 }
 
 void * OnlyToADataDefinition::GetPrimarySortedBranch(){
-    std::cout << std::setprecision(15) << **this->ToA << std::endl;
     return (void*)this->ToA;
 }
 

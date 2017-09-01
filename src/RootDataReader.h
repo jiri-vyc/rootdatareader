@@ -20,6 +20,36 @@ class RootDataReader {
         TTreeReader * m_treeReader;
         /// Check if all necessary requirements are set up for this reader to begin reading
         bool AllReadyToRead();
+        /// Get current value of primary sorted branch of currently attached DataDefinition
+
+        /// Perform the binary search for provided value on the current tree and find the starting index
+        template <typename T>
+        Long64_t BinarySearchForValue(T searchValue, Long64_t currIndex, Long64_t minIndex, Long64_t maxIndex){
+            // If the indexes meet, the value was found. Return.
+            if (currIndex == minIndex || currIndex == maxIndex){
+                return currIndex;
+            }
+            this->m_treeReader->SetEntry(currIndex + 1);
+            T nextValue = this->GetCurrentValue<T>();
+            this->m_treeReader->SetEntry(currIndex);
+
+            // If the current value meets the search condition, return. (current value is < than the searched one, the immediate next is already >=)
+            if (this->GetCurrentValue<T>() < searchValue && nextValue >= searchValue){
+                return currIndex;
+            }
+
+            // Search in lower/higher halves of the tree recursively, depending on the value
+            if (this->GetCurrentValue<T>() < searchValue){
+                return this->BinarySearchForValue(searchValue, (currIndex + maxIndex) / 2, currIndex, maxIndex);
+            } else {
+                return this->BinarySearchForValue(searchValue, (currIndex + minIndex) / 2, minIndex, currIndex);
+            }
+        }
+        /// Returns a current value of the primary sorted branch of the type specified
+        template <typename T>
+        T GetCurrentValue(){
+            return **((TTreeReaderValue<T>*)this->m_definition->GetPrimarySortedBranch());
+        }
     public:
         RootDataReader();
         ~RootDataReader();
@@ -39,24 +69,15 @@ class RootDataReader {
         SingleDataEntry * GetEntryAt(unsigned int index);
         DataEntryInterval * GetInterval(unsigned int indexFrom, unsigned int indexTo);
         /**
-        @brief Returns an index of entry with its value closest to given startValue
+        @brief Returns an index of entry with its value closest to given searchValue
 
-        Searches the primary sorted branch (specified by data definition) of the tree for value given by startValue and returns its index. Determines where the values in the tree start to be greated than the parameter.
-        */
+        Searches the primary sorted branch (specified by data definition) of the tree for value given by searchValue and returns its index. Determines where the values in the tree start to be greated than the parameter.
+
+        @return The last index on which the value is lower than searched value. Returns 0 if the searchValue is lower than 0th entry.        */
         template <typename T>
-        unsigned int GetStartingIndex(T startValue){
-
+        unsigned int GetStartingIndex(T searchValue){
             Long64_t entriesCnt = this->m_treeReader->GetEntries(false);
-
             Long64_t currIndex = entriesCnt/2;
-            
-            this->m_treeReader->SetEntry(currIndex);
-
-            std::cout << "Value of primary sorted branch in half of the tree: " << std::setprecision(15)<< **((TTreeReaderValue<T>*)this->m_definition->GetPrimarySortedBranch()) << std::endl;
-            std::cout << "On index n. " << currIndex << std::endl;
-
-            return 0;
-
-            //return this->m_definition->GetStartingIndex<T>(startValue);
+            return this->BinarySearchForValue<T>(searchValue, currIndex, 0, entriesCnt);
         }
 };

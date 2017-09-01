@@ -20,10 +20,13 @@ int main(void){
 
     cout << dataReader->GetInterval(0, 5)->JSONify() << endl;
 
-    Double_t search = 481258120;
-    cout << "Index: " << dataReader->GetStartingIndex<Double_t>(search) << endl;
+    Double_t search = 10481258117.1876;
+    Long64_t found = dataReader->GetStartingIndex<Double_t>(search);
+    cout << "Index: " << found << endl;
 
-    //dataReader->Scan();
+    cout << "On index " << found << ": " << std::setprecision(15) << *dataReader->GetEntryAt(found) << endl;
+    cout << "On index " << found+1 << ": " << std::setprecision(15) << *dataReader->GetEntryAt(found+1) << endl;
+
     cout << "Done." << endl;
 
 
