@@ -100,7 +100,7 @@ Inheritance diagram for RootDataDefinition:</div>
 <div class="dyncontent">
 <div class="center"><img src="classRootDataDefinition__inherit__graph.png" border="0" usemap="#RootDataDefinition_inherit__map" alt="Inheritance graph"/></div>
 <map name="RootDataDefinition_inherit__map" id="RootDataDefinition_inherit__map">
-<area shape="rect" id="node2" href="classOnlyToADataDefinition.html" title="Class defining the structure of data within root file containing only one value (of type double) &#45; To..." alt="" coords="5,321,192,443"/></map>
+<area shape="rect" id="node2" href="classOnlyToADataDefinition.html" title="Class defining the structure of data within root file containing only one value (of type double) &#45; To..." alt="" coords="5,336,192,457"/><area shape="rect" id="node3" href="classTPX3HitsDataDefinition.html" title="Class defining the structure of data within root file containing only one value (of type double) &#45; To..." alt="" coords="217,336,407,457"/></map>
 </div>
 <div class="dynheader">
 Collaboration diagram for RootDataDefinition:</div>
@@ -126,6 +126,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:acc7728b0a9315cacc6b9c1fae38ed490"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56f206839275fdf5af290b372c4d7e13"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRootDataDefinition.html#a56f206839275fdf5af290b372c4d7e13">GetFileName</a> ()</td></tr>
 <tr class="separator:a56f206839275fdf5af290b372c4d7e13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d785995aed4450ddfa97c7064cc5dfc"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a1d785995aed4450ddfa97c7064cc5dfc"><td class="memTemplItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classRootDataDefinition.html#a1d785995aed4450ddfa97c7064cc5dfc">GetStartingIndex</a> (T startValue)</td></tr>
+<tr class="separator:a1d785995aed4450ddfa97c7064cc5dfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a720d0b9c122b778f2b338792de9e8c47"><td class="memItemLeft" align="right" valign="top">virtual void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRootDataDefinition.html#a720d0b9c122b778f2b338792de9e8c47">GetPrimarySortedBranch</a> ()=0</td></tr>
 <tr class="separator:a720d0b9c122b778f2b338792de9e8c47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60bb9c8884bdaca62fa342bfa6cf0bdb"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classSingleDataEntry.html">SingleDataEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRootDataDefinition.html#a60bb9c8884bdaca62fa342bfa6cf0bdb">GetEntry</a> ()=0</td></tr>
@@ -153,10 +156,23 @@ Protected Attributes</h2></td></tr>
 <li>which ROOT file, tree and branches are used.</li>
 <li>which data to read from the ROOT tree</li>
 <li>which data object (derived from <a class="el" href="classSingleDataEntry.html" title="Abstract class representing a data object to be retrieved from the ROOT file. ">SingleDataEntry</a>) will be used to represent and store these data</li>
-<li>how to get values of the data object (<a class="el" href="classSingleDataEntry.html" title="Abstract class representing a data object to be retrieved from the ROOT file. ">SingleDataEntry</a>) from the values in the ROOT tree and its branches </li>
+<li>how to get values of the data object (<a class="el" href="classSingleDataEntry.html" title="Abstract class representing a data object to be retrieved from the ROOT file. ">SingleDataEntry</a>) from the values in the ROOT tree and its branches</li>
 </ul>
+<p>Types for TTreeReaderValues based on branch types of the TTree:</p>
+<p>C : a character string terminated by the 0 character</p>
+<p>B : an 8 bit signed integer (Char_t)</p>
+<p>b : an 8 bit unsigned integer (UChar_t)</p>
+<p>S : a 16 bit signed integer (Short_t)</p>
+<p>s : a 16 bit unsigned integer (UShort_t)</p>
+<p>I : a 32 bit signed integer (Int_t)</p>
+<p>i : a 32 bit unsigned integer (UInt_t)</p>
+<p>F : a 32 bit floating point (Float_t)</p>
+<p>D : a 64 bit floating point (Double_t)</p>
+<p>L : a 64 bit signed integer (Long64_t)</p>
+<p>l : a 64 bit unsigned integer (ULong64_t)</p>
+<p>O : [the letter o, not a zero] a boolean (Bool_t) </p>
 
-<p>Definition at line <a class="el" href="RootDataDefinition_8h_source.html#l00020">20</a> of file <a class="el" href="RootDataDefinition_8h_source.html">RootDataDefinition.h</a>.</p>
+<p>Definition at line <a class="el" href="RootDataDefinition_8h_source.html#l00046">46</a> of file <a class="el" href="RootDataDefinition_8h_source.html">RootDataDefinition.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aeb304a3a15314058d6663c45c7f8f00e"></a>
 <div class="memitem">
@@ -207,7 +223,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RootDataDefinition_8h_source.html#l00030">30</a> of file <a class="el" href="RootDataDefinition_8h_source.html">RootDataDefinition.h</a>.</p>
+<p>Definition at line <a class="el" href="RootDataDefinition_8h_source.html#l00056">56</a> of file <a class="el" href="RootDataDefinition_8h_source.html">RootDataDefinition.h</a>.</p>
 
 </div>
 </div>
@@ -233,7 +249,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classOnlyToADataDefinition.html#ab2f4346c01cf342390c392cf1e36eebe">OnlyToADataDefinition</a>.</p>
+<p>Implemented in <a class="el" href="classTPX3HitsDataDefinition.html#acbbf89d489d6926458356f79d18ca398">TPX3HitsDataDefinition</a>, and <a class="el" href="classOnlyToADataDefinition.html#ab2f4346c01cf342390c392cf1e36eebe">OnlyToADataDefinition</a>.</p>
 
 </div>
 </div>
@@ -292,7 +308,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classOnlyToADataDefinition.html#af2025f39b59dc8bd50a281f5034ed47a">OnlyToADataDefinition</a>.</p>
+<p>Implemented in <a class="el" href="classTPX3HitsDataDefinition.html#adb355446aab01960b8802df55a716c25">TPX3HitsDataDefinition</a>, and <a class="el" href="classOnlyToADataDefinition.html#af2025f39b59dc8bd50a281f5034ed47a">OnlyToADataDefinition</a>.</p>
 
 </div>
 </div>
@@ -310,6 +326,34 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="RootDataDefinition_8cpp_source.html#l00003">3</a> of file <a class="el" href="RootDataDefinition_8cpp_source.html">RootDataDefinition.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1d785995aed4450ddfa97c7064cc5dfc"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int RootDataDefinition::GetStartingIndex </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>startValue</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="RootDataDefinition_8h_source.html#l00063">63</a> of file <a class="el" href="RootDataDefinition_8h_source.html">RootDataDefinition.h</a>.</p>
 
 </div>
 </div>
@@ -366,7 +410,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RootDataDefinition_8h_source.html#l00023">23</a> of file <a class="el" href="RootDataDefinition_8h_source.html">RootDataDefinition.h</a>.</p>
+<p>Definition at line <a class="el" href="RootDataDefinition_8h_source.html#l00049">49</a> of file <a class="el" href="RootDataDefinition_8h_source.html">RootDataDefinition.h</a>.</p>
 
 </div>
 </div>
@@ -388,7 +432,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RootDataDefinition_8h_source.html#l00026">26</a> of file <a class="el" href="RootDataDefinition_8h_source.html">RootDataDefinition.h</a>.</p>
+<p>Definition at line <a class="el" href="RootDataDefinition_8h_source.html#l00052">52</a> of file <a class="el" href="RootDataDefinition_8h_source.html">RootDataDefinition.h</a>.</p>
 
 </div>
 </div>
@@ -410,7 +454,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RootDataDefinition_8h_source.html#l00025">25</a> of file <a class="el" href="RootDataDefinition_8h_source.html">RootDataDefinition.h</a>.</p>
+<p>Definition at line <a class="el" href="RootDataDefinition_8h_source.html#l00051">51</a> of file <a class="el" href="RootDataDefinition_8h_source.html">RootDataDefinition.h</a>.</p>
 
 </div>
 </div>
@@ -432,7 +476,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RootDataDefinition_8h_source.html#l00022">22</a> of file <a class="el" href="RootDataDefinition_8h_source.html">RootDataDefinition.h</a>.</p>
+<p>Definition at line <a class="el" href="RootDataDefinition_8h_source.html#l00048">48</a> of file <a class="el" href="RootDataDefinition_8h_source.html">RootDataDefinition.h</a>.</p>
 
 </div>
 </div>
@@ -454,7 +498,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RootDataDefinition_8h_source.html#l00024">24</a> of file <a class="el" href="RootDataDefinition_8h_source.html">RootDataDefinition.h</a>.</p>
+<p>Definition at line <a class="el" href="RootDataDefinition_8h_source.html#l00050">50</a> of file <a class="el" href="RootDataDefinition_8h_source.html">RootDataDefinition.h</a>.</p>
 
 </div>
 </div>
@@ -476,7 +520,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RootDataDefinition_8h_source.html#l00027">27</a> of file <a class="el" href="RootDataDefinition_8h_source.html">RootDataDefinition.h</a>.</p>
+<p>Definition at line <a class="el" href="RootDataDefinition_8h_source.html#l00053">53</a> of file <a class="el" href="RootDataDefinition_8h_source.html">RootDataDefinition.h</a>.</p>
 
 </div>
 </div>

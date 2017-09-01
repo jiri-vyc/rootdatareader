@@ -1,3 +1,4 @@
 <map id="SingleDataEntry" name="SingleDataEntry">
-<area shape="rect" id="node2" href="$classSinglePixelToA.html" title="Class defining the data object containing only single value (of type double) &#45; ToA. " alt="" coords="9,189,147,355"/>
+<area shape="rect" id="node2" href="$classSinglePixelToA.html" title="Class defining the data object containing only single value (of type double) &#45; ToA. " alt="" coords="5,226,144,391"/>
+<area shape="rect" id="node3" href="$classSingleTPX3Hit.html" title="Class defining the data object containing values about single hit on the TPX3 detector &#45;ToA..." alt="" coords="168,189,304,428"/>
 </map>

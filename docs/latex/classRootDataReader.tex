@@ -12,11 +12,12 @@ Class responsible for reading data of various structure in the R\+O\+O\+T format
 
 
 
-Collaboration diagram for Root\+Data\+Reader\+:\nopagebreak
+Collaboration diagram for Root\+Data\+Reader\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=191pt]{classRootDataReader__coll__graph}
+\includegraphics[width=195pt]{classRootDataReader__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -27,17 +28,21 @@ Collaboration diagram for Root\+Data\+Reader\+:\nopagebreak
 \hyperlink{classRootDataReader_a9f6b5d9e26e27128a445ac3529414f6f}{$\sim$\+Root\+Data\+Reader} ()
 \item 
 T\+Tree\+Reader $\ast$ \hyperlink{classRootDataReader_a749a090b6c0404f9ff08873a2aef63d7}{Get\+Tree\+Reader} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Returns a reference to a native R\+O\+O\+T's T\+Tree\+Reader object. \end{DoxyCompactList}\item 
 void \hyperlink{classRootDataReader_ad670745df69f90ea6578d7c29cab716f}{Set\+Data\+Definition} (\hyperlink{classRootDataDefinition}{Root\+Data\+Definition} $\ast$definition)
-\item 
+\begin{DoxyCompactList}\small\item\em Assigns given data definition to this reader -\/ data read will be in format specified by the definition. \end{DoxyCompactList}\item 
 void \hyperlink{classRootDataReader_a22eac63f0710d5cce4a1d0a16210ce8f}{Scan} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Invokes default functionality of T\+Tree\+::\+Scan() of the loaded R\+O\+O\+T T\+Tree -\/ prints contents of the tree. \end{DoxyCompactList}\item 
+void \hyperlink{classRootDataReader_ad09cfc44c2075d7e7dee819460718f1e}{Get\+List\+Of\+Branches} ()
+\begin{DoxyCompactList}\small\item\em Prints a list of all branches within the loaded R\+O\+O\+T T\+Tree, uses T\+Tree\+::\+Get\+List\+Of\+Branches() -\/ doesn't have to correspond with used data definition! \end{DoxyCompactList}\item 
 bool \hyperlink{classRootDataReader_aac09b1313c7ce2c180b5efede781eef6}{Print\+First} ()
 \item 
 \hyperlink{classSingleDataEntry}{Single\+Data\+Entry} $\ast$ \hyperlink{classRootDataReader_abd5fbaefe8631cf251e9aeade874fa5d}{Get\+Entry\+At} (unsigned int index)
-\item 
+\begin{DoxyCompactList}\small\item\em Returns a single data entry at given index. Entry returned is of type specified in selected \hyperlink{classRootDataDefinition}{Root\+Data\+Definition}. \end{DoxyCompactList}\item 
 \hyperlink{classDataEntryInterval}{Data\+Entry\+Interval} $\ast$ \hyperlink{classRootDataReader_a76a02dd2cc6f4cde896ce9180048671b}{Get\+Interval} (unsigned int index\+From, unsigned int index\+To)
-\end{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\unsigned int \hyperlink{classRootDataReader_a04d8033b9761cc8c673af9bb96adfc03}{Get\+Starting\+Index} (T search\+Value)
+\begin{DoxyCompactList}\small\item\em Returns an index of entry with its value closest to given search\+Value. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -86,7 +91,11 @@ Definition at line 8 of file Root\+Data\+Reader.\+cpp.
 )}}\label{classRootDataReader_abd5fbaefe8631cf251e9aeade874fa5d}
 
 
-Definition at line 32 of file Root\+Data\+Reader.\+cpp.
+Returns a single data entry at given index. Entry returned is of type specified in selected \hyperlink{classRootDataDefinition}{Root\+Data\+Definition}. 
+
+
+
+Definition at line 36 of file Root\+Data\+Reader.\+cpp.
 
 \hypertarget{classRootDataReader_a76a02dd2cc6f4cde896ce9180048671b}{\index{Root\+Data\+Reader@{Root\+Data\+Reader}!Get\+Interval@{Get\+Interval}}
 \index{Get\+Interval@{Get\+Interval}!Root\+Data\+Reader@{Root\+Data\+Reader}}
@@ -98,7 +107,42 @@ Definition at line 32 of file Root\+Data\+Reader.\+cpp.
 )}}\label{classRootDataReader_a76a02dd2cc6f4cde896ce9180048671b}
 
 
-Definition at line 40 of file Root\+Data\+Reader.\+cpp.
+Definition at line 44 of file Root\+Data\+Reader.\+cpp.
+
+\hypertarget{classRootDataReader_ad09cfc44c2075d7e7dee819460718f1e}{\index{Root\+Data\+Reader@{Root\+Data\+Reader}!Get\+List\+Of\+Branches@{Get\+List\+Of\+Branches}}
+\index{Get\+List\+Of\+Branches@{Get\+List\+Of\+Branches}!Root\+Data\+Reader@{Root\+Data\+Reader}}
+\subsubsection[{Get\+List\+Of\+Branches}]{\setlength{\rightskip}{0pt plus 5cm}void Root\+Data\+Reader\+::\+Get\+List\+Of\+Branches (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRootDataReader_ad09cfc44c2075d7e7dee819460718f1e}
+
+
+Prints a list of all branches within the loaded R\+O\+O\+T T\+Tree, uses T\+Tree\+::\+Get\+List\+Of\+Branches() -\/ doesn't have to correspond with used data definition! 
+
+
+
+Definition at line 23 of file Root\+Data\+Reader.\+cpp.
+
+\hypertarget{classRootDataReader_a04d8033b9761cc8c673af9bb96adfc03}{\index{Root\+Data\+Reader@{Root\+Data\+Reader}!Get\+Starting\+Index@{Get\+Starting\+Index}}
+\index{Get\+Starting\+Index@{Get\+Starting\+Index}!Root\+Data\+Reader@{Root\+Data\+Reader}}
+\subsubsection[{Get\+Starting\+Index}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ unsigned int Root\+Data\+Reader\+::\+Get\+Starting\+Index (
+\begin{DoxyParamCaption}
+\item[{T}]{search\+Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classRootDataReader_a04d8033b9761cc8c673af9bb96adfc03}
+
+
+Returns an index of entry with its value closest to given search\+Value. 
+
+Searches the primary sorted branch (specified by data definition) of the tree for value given by search\+Value and returns its index. Determines where the values in the tree start to be greated than the parameter.
+
+\begin{DoxyReturn}{Returns}
+The last index on which the value is lower than searched value. Returns 0 if the search\+Value is lower than 0th entry. 
+\end{DoxyReturn}
+
+
+Definition at line 78 of file Root\+Data\+Reader.\+h.
 
 \hypertarget{classRootDataReader_a749a090b6c0404f9ff08873a2aef63d7}{\index{Root\+Data\+Reader@{Root\+Data\+Reader}!Get\+Tree\+Reader@{Get\+Tree\+Reader}}
 \index{Get\+Tree\+Reader@{Get\+Tree\+Reader}!Root\+Data\+Reader@{Root\+Data\+Reader}}
@@ -109,7 +153,11 @@ Definition at line 40 of file Root\+Data\+Reader.\+cpp.
 )}}\label{classRootDataReader_a749a090b6c0404f9ff08873a2aef63d7}
 
 
-Definition at line 55 of file Root\+Data\+Reader.\+cpp.
+Returns a reference to a native R\+O\+O\+T's T\+Tree\+Reader object. 
+
+
+
+Definition at line 59 of file Root\+Data\+Reader.\+cpp.
 
 \hypertarget{classRootDataReader_aac09b1313c7ce2c180b5efede781eef6}{\index{Root\+Data\+Reader@{Root\+Data\+Reader}!Print\+First@{Print\+First}}
 \index{Print\+First@{Print\+First}!Root\+Data\+Reader@{Root\+Data\+Reader}}
@@ -125,7 +173,7 @@ false if there was an error and printing couldn't happen
 \end{DoxyReturn}
 
 
-Definition at line 23 of file Root\+Data\+Reader.\+cpp.
+Definition at line 27 of file Root\+Data\+Reader.\+cpp.
 
 \hypertarget{classRootDataReader_a22eac63f0710d5cce4a1d0a16210ce8f}{\index{Root\+Data\+Reader@{Root\+Data\+Reader}!Scan@{Scan}}
 \index{Scan@{Scan}!Root\+Data\+Reader@{Root\+Data\+Reader}}
@@ -134,6 +182,10 @@ Definition at line 23 of file Root\+Data\+Reader.\+cpp.
 {}
 \end{DoxyParamCaption}
 )}}\label{classRootDataReader_a22eac63f0710d5cce4a1d0a16210ce8f}
+
+
+Invokes default functionality of T\+Tree\+::\+Scan() of the loaded R\+O\+O\+T T\+Tree -\/ prints contents of the tree. 
+
 
 
 Definition at line 19 of file Root\+Data\+Reader.\+cpp.
@@ -145,6 +197,10 @@ Definition at line 19 of file Root\+Data\+Reader.\+cpp.
 \item[{{\bf Root\+Data\+Definition} $\ast$}]{definition}
 \end{DoxyParamCaption}
 )}}\label{classRootDataReader_ad670745df69f90ea6578d7c29cab716f}
+
+
+Assigns given data definition to this reader -\/ data read will be in format specified by the definition. 
+
 
 
 Definition at line 14 of file Root\+Data\+Reader.\+cpp.

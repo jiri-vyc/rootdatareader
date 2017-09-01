@@ -12,16 +12,18 @@ Abstract interface for defining a structure of the data in the R\+O\+O\+T files,
 
 
 
-Inheritance diagram for Root\+Data\+Definition\+:\nopagebreak
+Inheritance diagram for Root\+Data\+Definition\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=220pt]{classRootDataDefinition__inherit__graph}
+\includegraphics[width=350pt]{classRootDataDefinition__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for Root\+Data\+Definition\+:\nopagebreak
+Collaboration diagram for Root\+Data\+Definition\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -44,6 +46,8 @@ T\+File $\ast$ \hyperlink{classRootDataDefinition_ab26897ffdd1de5e6572f606777006
 std\+::string \hyperlink{classRootDataDefinition_acc7728b0a9315cacc6b9c1fae38ed490}{Get\+Tree\+Name} ()
 \item 
 std\+::string \hyperlink{classRootDataDefinition_a56f206839275fdf5af290b372c4d7e13}{Get\+File\+Name} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\unsigned int \hyperlink{classRootDataDefinition_a1d785995aed4450ddfa97c7064cc5dfc}{Get\+Starting\+Index} (T start\+Value)
 \item 
 virtual void $\ast$ \hyperlink{classRootDataDefinition_a720d0b9c122b778f2b338792de9e8c47}{Get\+Primary\+Sorted\+Branch} ()=0
 \item 
@@ -76,10 +80,36 @@ Defines\+:
 \item which R\+O\+O\+T file, tree and branches are used.
 \item which data to read from the R\+O\+O\+T tree
 \item which data object (derived from \hyperlink{classSingleDataEntry}{Single\+Data\+Entry}) will be used to represent and store these data
-\item how to get values of the data object (\hyperlink{classSingleDataEntry}{Single\+Data\+Entry}) from the values in the R\+O\+O\+T tree and its branches 
+\item how to get values of the data object (\hyperlink{classSingleDataEntry}{Single\+Data\+Entry}) from the values in the R\+O\+O\+T tree and its branches
 \end{DoxyItemize}
 
-Definition at line 20 of file Root\+Data\+Definition.\+h.
+Types for T\+Tree\+Reader\+Values based on branch types of the T\+Tree\+:
+
+C \+: a character string terminated by the 0 character
+
+B \+: an 8 bit signed integer (Char\+\_\+t)
+
+b \+: an 8 bit unsigned integer (U\+Char\+\_\+t)
+
+S \+: a 16 bit signed integer (Short\+\_\+t)
+
+s \+: a 16 bit unsigned integer (U\+Short\+\_\+t)
+
+I \+: a 32 bit signed integer (Int\+\_\+t)
+
+i \+: a 32 bit unsigned integer (U\+Int\+\_\+t)
+
+F \+: a 32 bit floating point (Float\+\_\+t)
+
+D \+: a 64 bit floating point (Double\+\_\+t)
+
+L \+: a 64 bit signed integer (Long64\+\_\+t)
+
+l \+: a 64 bit unsigned integer (U\+Long64\+\_\+t)
+
+O \+: \mbox{[}the letter o, not a zero\mbox{]} a boolean (Bool\+\_\+t) 
+
+Definition at line 46 of file Root\+Data\+Definition.\+h.
 
 
 
@@ -105,7 +135,7 @@ Definition at line 26 of file Root\+Data\+Definition.\+cpp.
 )\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{classRootDataDefinition_a40a873fba464bcb796a444db890385dc}
 
 
-Definition at line 30 of file Root\+Data\+Definition.\+h.
+Definition at line 56 of file Root\+Data\+Definition.\+h.
 
 
 
@@ -119,7 +149,7 @@ Definition at line 30 of file Root\+Data\+Definition.\+h.
 )\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classRootDataDefinition_a60bb9c8884bdaca62fa342bfa6cf0bdb}
 
 
-Implemented in \hyperlink{classOnlyToADataDefinition_ab2f4346c01cf342390c392cf1e36eebe}{Only\+To\+A\+Data\+Definition}.
+Implemented in \hyperlink{classTPX3HitsDataDefinition_acbbf89d489d6926458356f79d18ca398}{T\+P\+X3\+Hits\+Data\+Definition}, and \hyperlink{classOnlyToADataDefinition_ab2f4346c01cf342390c392cf1e36eebe}{Only\+To\+A\+Data\+Definition}.
 
 \hypertarget{classRootDataDefinition_ab26897ffdd1de5e6572f6067770066b3}{\index{Root\+Data\+Definition@{Root\+Data\+Definition}!Get\+File@{Get\+File}}
 \index{Get\+File@{Get\+File}!Root\+Data\+Definition@{Root\+Data\+Definition}}
@@ -152,7 +182,7 @@ Definition at line 22 of file Root\+Data\+Definition.\+cpp.
 )\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classRootDataDefinition_a720d0b9c122b778f2b338792de9e8c47}
 
 
-Implemented in \hyperlink{classOnlyToADataDefinition_af2025f39b59dc8bd50a281f5034ed47a}{Only\+To\+A\+Data\+Definition}.
+Implemented in \hyperlink{classTPX3HitsDataDefinition_adb355446aab01960b8802df55a716c25}{T\+P\+X3\+Hits\+Data\+Definition}, and \hyperlink{classOnlyToADataDefinition_af2025f39b59dc8bd50a281f5034ed47a}{Only\+To\+A\+Data\+Definition}.
 
 \hypertarget{classRootDataDefinition_a48a885b44c954506728f71f07d927506}{\index{Root\+Data\+Definition@{Root\+Data\+Definition}!Get\+Reader@{Get\+Reader}}
 \index{Get\+Reader@{Get\+Reader}!Root\+Data\+Definition@{Root\+Data\+Definition}}
@@ -164,6 +194,17 @@ Implemented in \hyperlink{classOnlyToADataDefinition_af2025f39b59dc8bd50a281f503
 
 
 Definition at line 3 of file Root\+Data\+Definition.\+cpp.
+
+\hypertarget{classRootDataDefinition_a1d785995aed4450ddfa97c7064cc5dfc}{\index{Root\+Data\+Definition@{Root\+Data\+Definition}!Get\+Starting\+Index@{Get\+Starting\+Index}}
+\index{Get\+Starting\+Index@{Get\+Starting\+Index}!Root\+Data\+Definition@{Root\+Data\+Definition}}
+\subsubsection[{Get\+Starting\+Index}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ unsigned int Root\+Data\+Definition\+::\+Get\+Starting\+Index (
+\begin{DoxyParamCaption}
+\item[{T}]{start\+Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classRootDataDefinition_a1d785995aed4450ddfa97c7064cc5dfc}
+
+
+Definition at line 63 of file Root\+Data\+Definition.\+h.
 
 \hypertarget{classRootDataDefinition_a20ed89d6d2483a0f76cd2fb131fcc597}{\index{Root\+Data\+Definition@{Root\+Data\+Definition}!Get\+Tree@{Get\+Tree}}
 \index{Get\+Tree@{Get\+Tree}!Root\+Data\+Definition@{Root\+Data\+Definition}}
@@ -195,42 +236,42 @@ Definition at line 18 of file Root\+Data\+Definition.\+cpp.
 \subsubsection[{m\+\_\+data\+Entry}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Single\+Data\+Entry}$\ast$ Root\+Data\+Definition\+::m\+\_\+data\+Entry\hspace{0.3cm}{\ttfamily [protected]}}}\label{classRootDataDefinition_a4d36dedf6212d7096b0020e9c1be9247}
 
 
-Definition at line 23 of file Root\+Data\+Definition.\+h.
+Definition at line 49 of file Root\+Data\+Definition.\+h.
 
 \hypertarget{classRootDataDefinition_a03154139db8613ec02cd57fd84d8c0e8}{\index{Root\+Data\+Definition@{Root\+Data\+Definition}!m\+\_\+file\+Name@{m\+\_\+file\+Name}}
 \index{m\+\_\+file\+Name@{m\+\_\+file\+Name}!Root\+Data\+Definition@{Root\+Data\+Definition}}
 \subsubsection[{m\+\_\+file\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Root\+Data\+Definition\+::m\+\_\+file\+Name\hspace{0.3cm}{\ttfamily [protected]}}}\label{classRootDataDefinition_a03154139db8613ec02cd57fd84d8c0e8}
 
 
-Definition at line 26 of file Root\+Data\+Definition.\+h.
+Definition at line 52 of file Root\+Data\+Definition.\+h.
 
 \hypertarget{classRootDataDefinition_af00a892a1b940abf9265066391b67304}{\index{Root\+Data\+Definition@{Root\+Data\+Definition}!m\+\_\+root\+File@{m\+\_\+root\+File}}
 \index{m\+\_\+root\+File@{m\+\_\+root\+File}!Root\+Data\+Definition@{Root\+Data\+Definition}}
 \subsubsection[{m\+\_\+root\+File}]{\setlength{\rightskip}{0pt plus 5cm}T\+File$\ast$ Root\+Data\+Definition\+::m\+\_\+root\+File\hspace{0.3cm}{\ttfamily [protected]}}}\label{classRootDataDefinition_af00a892a1b940abf9265066391b67304}
 
 
-Definition at line 25 of file Root\+Data\+Definition.\+h.
+Definition at line 51 of file Root\+Data\+Definition.\+h.
 
 \hypertarget{classRootDataDefinition_a941ec585a2aa533bc30889a382e54f50}{\index{Root\+Data\+Definition@{Root\+Data\+Definition}!m\+\_\+tree@{m\+\_\+tree}}
 \index{m\+\_\+tree@{m\+\_\+tree}!Root\+Data\+Definition@{Root\+Data\+Definition}}
 \subsubsection[{m\+\_\+tree}]{\setlength{\rightskip}{0pt plus 5cm}T\+Tree$\ast$ Root\+Data\+Definition\+::m\+\_\+tree\hspace{0.3cm}{\ttfamily [protected]}}}\label{classRootDataDefinition_a941ec585a2aa533bc30889a382e54f50}
 
 
-Definition at line 22 of file Root\+Data\+Definition.\+h.
+Definition at line 48 of file Root\+Data\+Definition.\+h.
 
 \hypertarget{classRootDataDefinition_a46394bbb1863baa4abcd8cbd0413fa88}{\index{Root\+Data\+Definition@{Root\+Data\+Definition}!m\+\_\+tree\+Name@{m\+\_\+tree\+Name}}
 \index{m\+\_\+tree\+Name@{m\+\_\+tree\+Name}!Root\+Data\+Definition@{Root\+Data\+Definition}}
 \subsubsection[{m\+\_\+tree\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Root\+Data\+Definition\+::m\+\_\+tree\+Name\hspace{0.3cm}{\ttfamily [protected]}}}\label{classRootDataDefinition_a46394bbb1863baa4abcd8cbd0413fa88}
 
 
-Definition at line 24 of file Root\+Data\+Definition.\+h.
+Definition at line 50 of file Root\+Data\+Definition.\+h.
 
 \hypertarget{classRootDataDefinition_a919827bdd245e61c0f54676d59cc7448}{\index{Root\+Data\+Definition@{Root\+Data\+Definition}!m\+\_\+tree\+Reader@{m\+\_\+tree\+Reader}}
 \index{m\+\_\+tree\+Reader@{m\+\_\+tree\+Reader}!Root\+Data\+Definition@{Root\+Data\+Definition}}
 \subsubsection[{m\+\_\+tree\+Reader}]{\setlength{\rightskip}{0pt plus 5cm}T\+Tree\+Reader$\ast$ Root\+Data\+Definition\+::m\+\_\+tree\+Reader\hspace{0.3cm}{\ttfamily [protected]}}}\label{classRootDataDefinition_a919827bdd245e61c0f54676d59cc7448}
 
 
-Definition at line 27 of file Root\+Data\+Definition.\+h.
+Definition at line 53 of file Root\+Data\+Definition.\+h.
 
 
 

@@ -22,13 +22,9 @@ int main(void){
 
     Double_t search = 10481258117.1876;
     Long64_t found = dataReader->GetStartingIndex<Double_t>(search);
-    cout << "Index: " << found << endl;
-
-    cout << "On index " << found << ": " << std::setprecision(15) << *dataReader->GetEntryAt(found) << endl;
-    cout << "On index " << found+1 << ": " << std::setprecision(15) << *dataReader->GetEntryAt(found+1) << endl;
+    cout << "Searched value " << search << " found at index: " << found << endl;
 
     cout << "Done." << endl;
-
 
     delete dataReader;
     delete definition;

@@ -1,0 +1,5 @@
+<map id="TPX3HitsDataDefinition" name="TPX3HitsDataDefinition">
+<area shape="rect" id="node2" href="$classRootDataDefinition.html" title="Abstract interface for defining a structure of the data in the ROOT files, process how to read these ..." alt="" coords="5,204,192,472"/>
+<area shape="rect" id="node3" href="$classSingleDataEntry.html" title="Abstract class representing a data object to be retrieved from the ROOT file. " alt="" coords="129,5,274,141"/>
+<area shape="rect" id="node4" href="$classSingleTPX3Hit.html" title="Class defining the data object containing values about single hit on the TPX3 detector &#45;ToA..." alt="" coords="216,219,352,457"/>
+</map>

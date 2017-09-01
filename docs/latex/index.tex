@@ -44,7 +44,7 @@ Leave this class as is, use its A\+P\+I to your heart's content. One of its meth
 This is where the definition of the data happens. It describes which data, where, and how they are stored in the root file. It describes the types and names of the branches you will be working with. It is an abstract class and only dictates you which methods you have to have in your child class. Extend this class, define the types and names of values you will have in your data (see example \hyperlink{classOnlyToADataDefinition}{Only\+To\+A\+Data\+Definition}). Each of the values represent a single value stored in the tree branch and will be automatically filled. Then, implement the Get\+Entry() method. In this method, manipulate the values from the branches that you specified as you want and save the result into object of type \hyperlink{classSingleDataEntry}{Single\+Data\+Entry} and return it.
 \item \hyperlink{classSingleDataEntry}{Single\+Data\+Entry}
 
-This is the class which represents one single data object you want to be working with. It doesn't have to correspond 1\+:1 with the data stored in root files and defined in \hyperlink{classRootDataDefinition}{Root\+Data\+Definition}. You have stored 2 parts of the desired object's single attribute in 2 separate branches? No problem, combine them in defined way in the \hyperlink{classRootDataDefinition}{Root\+Data\+Definition} and store them in single value in \hyperlink{classSingleDataEntry}{Single\+Data\+Entry}. This is the resulting object (representing real one) that you want to be manipulating, visualizing, evaluating. No matter how the data are physically stored in the files. It can be complex particle cluster, a frame, or a simple object with only one value (as in example \hyperlink{classSinglePixelToA}{Single\+Pixel\+To\+A}). To get such object, extend this class(\+Single\+Data\+Entry), define your concrete entry's attributes, implement your own Getters and Setters if needed and implement the virtual methods Print() and J\+S\+O\+Nify(), specifying, how you want to print/serialize your values (you can see example in \hyperlink{classSinglePixelToA_a8b9d4ef4082473c747157b9b2c1376b0}{Single\+Pixel\+To\+A\+::\+Print()} and \hyperlink{classSingleDataEntry_a9e48725016d6fbd6bd674d5b299dbb12}{Single\+Pixel\+To\+A\+::\+J\+S\+O\+Nify()}).
+This is the class which represents one single data object you want to be working with. It doesn't have to correspond 1\+:1 with the data stored in root files and defined in \hyperlink{classRootDataDefinition}{Root\+Data\+Definition}. You have stored 2 parts of the desired object's single attribute in 2 separate branches? No problem, combine them in defined way in the \hyperlink{classRootDataDefinition}{Root\+Data\+Definition} and store them in single value in \hyperlink{classSingleDataEntry}{Single\+Data\+Entry}. This is the resulting object (representing real one) that you want to be manipulating, visualizing, evaluating. No matter how the data are physically stored in the files. It can be complex particle cluster, a frame, or a simple object with only one value (as in example \hyperlink{classSinglePixelToA}{Single\+Pixel\+To\+A}). To get such object, extend this class (\hyperlink{classSingleDataEntry}{Single\+Data\+Entry}), define your concrete entry's attributes, implement your own Getters and Setters if needed and implement the virtual methods Print() and J\+S\+O\+Nify(), specifying, how you want to print/serialize your values (you can see example in \hyperlink{classSinglePixelToA_a8b9d4ef4082473c747157b9b2c1376b0}{Single\+Pixel\+To\+A\+::\+Print()} and \hyperlink{classSingleDataEntry_a9e48725016d6fbd6bd674d5b299dbb12}{Single\+Pixel\+To\+A\+::\+J\+S\+O\+Nify()}).
 
 You can have data stored in two different ways (different trees, different branches), but you want to get the same resulting data from them? No problem either, you can have several different Root\+Data\+Definitions, which define and manipulate the data in different way, but stores them into single (same) \hyperlink{classSingleDataEntry}{Single\+Data\+Entry}. Later you can work with these objects exactly the same way, they are the same object, no matter where they came from.
 
@@ -102,6 +102,28 @@ Prints\+:
 \}
 \end{DoxyCode}
 
+
+\subsubsection*{Also it can do sorting \& binary search!}
+
+You just have to specify primary sorted branch of the used tree in the \hyperlink{classRootDataDefinition}{Root\+Data\+Definition} class and the \hyperlink{classRootDataReader}{Root\+Data\+Reader} does everything for you. You provide the value you want to find, and the reader will use its native, fast binary search algorithm to find the index on which this value in the tree/root file is. With any type of the data definition, with any (comparable by $<$) type of the branch value. Use like this\+:
+
+Specify that the primary branch, which is sorted and by which the searching will happen, is the \char`\"{}\+To\+A\char`\"{} branch\+: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{void} * \hyperlink{classOnlyToADataDefinition_af2025f39b59dc8bd50a281f5034ed47a}{OnlyToADataDefinition::GetPrimarySortedBranch}()\{
+    \textcolor{keywordflow}{return} (\textcolor{keywordtype}{void}*)this->ToA;
+\}
+\end{DoxyCode}
+
+
+and then just search for specific value (and specify its type)
+
+
+\begin{DoxyCode}
+cout << \textcolor{stringliteral}{"Index: "} << dataReader->\hyperlink{classRootDataReader_a04d8033b9761cc8c673af9bb96adfc03}{GetStartingIndex}<Double\_t>(481258120) << endl;
+\end{DoxyCode}
+
+
+and the result is the index on which the values of the \char`\"{}\+To\+A\char`\"{} branch start to be bigger than 481258120, found by binary search.
 
 \subsubsection*{How to set it up and use it?}
 

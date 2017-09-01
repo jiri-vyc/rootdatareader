@@ -1,5 +1,5 @@
 <map id="OnlyToADataDefinition" name="OnlyToADataDefinition">
-<area shape="rect" id="node2" href="$classRootDataDefinition.html" title="Abstract interface for defining a structure of the data in the ROOT files, process how to read these ..." alt="" coords="5,204,192,457"/>
+<area shape="rect" id="node2" href="$classRootDataDefinition.html" title="Abstract interface for defining a structure of the data in the ROOT files, process how to read these ..." alt="" coords="5,204,192,472"/>
 <area shape="rect" id="node3" href="$classSingleDataEntry.html" title="Abstract class representing a data object to be retrieved from the ROOT file. " alt="" coords="129,5,274,141"/>
-<area shape="rect" id="node4" href="$classSinglePixelToA.html" title="Class defining the data object containing only single value (of type double) &#45; ToA. " alt="" coords="216,248,355,413"/>
+<area shape="rect" id="node4" href="$classSinglePixelToA.html" title="Class defining the data object containing only single value (of type double) &#45; ToA. " alt="" coords="216,255,355,421"/>
 </map>

@@ -98,6 +98,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Collaboration diagram for RootDataReader:</div>
 <div class="dyncontent">
 <div class="center"><img src="classRootDataReader__coll__graph.png" border="0" usemap="#RootDataReader_coll__map" alt="Collaboration graph"/></div>
+<map name="RootDataReader_coll__map" id="RootDataReader_coll__map">
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -107,17 +109,28 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9f6b5d9e26e27128a445ac3529414f6f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRootDataReader.html#a9f6b5d9e26e27128a445ac3529414f6f">~RootDataReader</a> ()</td></tr>
 <tr class="separator:a9f6b5d9e26e27128a445ac3529414f6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a749a090b6c0404f9ff08873a2aef63d7"><td class="memItemLeft" align="right" valign="top">TTreeReader *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRootDataReader.html#a749a090b6c0404f9ff08873a2aef63d7">GetTreeReader</a> ()</td></tr>
+<tr class="memdesc:a749a090b6c0404f9ff08873a2aef63d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to a native ROOT's TTreeReader object.  <a href="#a749a090b6c0404f9ff08873a2aef63d7">More...</a><br /></td></tr>
 <tr class="separator:a749a090b6c0404f9ff08873a2aef63d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad670745df69f90ea6578d7c29cab716f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRootDataReader.html#ad670745df69f90ea6578d7c29cab716f">SetDataDefinition</a> (<a class="el" href="classRootDataDefinition.html">RootDataDefinition</a> *definition)</td></tr>
+<tr class="memdesc:ad670745df69f90ea6578d7c29cab716f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assigns given data definition to this reader - data read will be in format specified by the definition.  <a href="#ad670745df69f90ea6578d7c29cab716f">More...</a><br /></td></tr>
 <tr class="separator:ad670745df69f90ea6578d7c29cab716f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22eac63f0710d5cce4a1d0a16210ce8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRootDataReader.html#a22eac63f0710d5cce4a1d0a16210ce8f">Scan</a> ()</td></tr>
+<tr class="memdesc:a22eac63f0710d5cce4a1d0a16210ce8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invokes default functionality of TTree::Scan() of the loaded ROOT TTree - prints contents of the tree.  <a href="#a22eac63f0710d5cce4a1d0a16210ce8f">More...</a><br /></td></tr>
 <tr class="separator:a22eac63f0710d5cce4a1d0a16210ce8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad09cfc44c2075d7e7dee819460718f1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRootDataReader.html#ad09cfc44c2075d7e7dee819460718f1e">GetListOfBranches</a> ()</td></tr>
+<tr class="memdesc:ad09cfc44c2075d7e7dee819460718f1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a list of all branches within the loaded ROOT TTree, uses TTree::GetListOfBranches() - doesn't have to correspond with used data definition!  <a href="#ad09cfc44c2075d7e7dee819460718f1e">More...</a><br /></td></tr>
+<tr class="separator:ad09cfc44c2075d7e7dee819460718f1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac09b1313c7ce2c180b5efede781eef6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRootDataReader.html#aac09b1313c7ce2c180b5efede781eef6">PrintFirst</a> ()</td></tr>
 <tr class="separator:aac09b1313c7ce2c180b5efede781eef6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd5fbaefe8631cf251e9aeade874fa5d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSingleDataEntry.html">SingleDataEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRootDataReader.html#abd5fbaefe8631cf251e9aeade874fa5d">GetEntryAt</a> (unsigned int index)</td></tr>
+<tr class="memdesc:abd5fbaefe8631cf251e9aeade874fa5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a single data entry at given index. Entry returned is of type specified in selected <a class="el" href="classRootDataDefinition.html" title="Abstract interface for defining a structure of the data in the ROOT files, process how to read these ...">RootDataDefinition</a>.  <a href="#abd5fbaefe8631cf251e9aeade874fa5d">More...</a><br /></td></tr>
 <tr class="separator:abd5fbaefe8631cf251e9aeade874fa5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76a02dd2cc6f4cde896ce9180048671b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDataEntryInterval.html">DataEntryInterval</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRootDataReader.html#a76a02dd2cc6f4cde896ce9180048671b">GetInterval</a> (unsigned int indexFrom, unsigned int indexTo)</td></tr>
 <tr class="separator:a76a02dd2cc6f4cde896ce9180048671b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04d8033b9761cc8c673af9bb96adfc03"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a04d8033b9761cc8c673af9bb96adfc03"><td class="memTemplItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classRootDataReader.html#a04d8033b9761cc8c673af9bb96adfc03">GetStartingIndex</a> (T searchValue)</td></tr>
+<tr class="memdesc:a04d8033b9761cc8c673af9bb96adfc03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an index of entry with its value closest to given searchValue.  <a href="#a04d8033b9761cc8c673af9bb96adfc03">More...</a><br /></td></tr>
+<tr class="separator:a04d8033b9761cc8c673af9bb96adfc03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class responsible for reading data of various structure in the ROOT format (TTree within TFile). </p>
@@ -175,7 +188,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RootDataReader_8cpp_source.html#l00032">32</a> of file <a class="el" href="RootDataReader_8cpp_source.html">RootDataReader.cpp</a>.</p>
+<p>Returns a single data entry at given index. Entry returned is of type specified in selected <a class="el" href="classRootDataDefinition.html" title="Abstract interface for defining a structure of the data in the ROOT files, process how to read these ...">RootDataDefinition</a>. </p>
+
+<p>Definition at line <a class="el" href="RootDataReader_8cpp_source.html#l00036">36</a> of file <a class="el" href="RootDataReader_8cpp_source.html">RootDataReader.cpp</a>.</p>
 
 </div>
 </div>
@@ -203,7 +218,58 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RootDataReader_8cpp_source.html#l00040">40</a> of file <a class="el" href="RootDataReader_8cpp_source.html">RootDataReader.cpp</a>.</p>
+<p>Definition at line <a class="el" href="RootDataReader_8cpp_source.html#l00044">44</a> of file <a class="el" href="RootDataReader_8cpp_source.html">RootDataReader.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad09cfc44c2075d7e7dee819460718f1e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RootDataReader::GetListOfBranches </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Prints a list of all branches within the loaded ROOT TTree, uses TTree::GetListOfBranches() - doesn't have to correspond with used data definition! </p>
+
+<p>Definition at line <a class="el" href="RootDataReader_8cpp_source.html#l00023">23</a> of file <a class="el" href="RootDataReader_8cpp_source.html">RootDataReader.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a04d8033b9761cc8c673af9bb96adfc03"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int RootDataReader::GetStartingIndex </td>
+          <td>(</td>
+          <td class="paramtype">T&#160;</td>
+          <td class="paramname"><em>searchValue</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns an index of entry with its value closest to given searchValue. </p>
+<p>Searches the primary sorted branch (specified by data definition) of the tree for value given by searchValue and returns its index. Determines where the values in the tree start to be greated than the parameter.</p>
+<dl class="section return"><dt>Returns</dt><dd>The last index on which the value is lower than searched value. Returns 0 if the searchValue is lower than 0th entry. </dd></dl>
+
+<p>Definition at line <a class="el" href="RootDataReader_8h_source.html#l00078">78</a> of file <a class="el" href="RootDataReader_8h_source.html">RootDataReader.h</a>.</p>
 
 </div>
 </div>
@@ -220,7 +286,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="RootDataReader_8cpp_source.html#l00055">55</a> of file <a class="el" href="RootDataReader_8cpp_source.html">RootDataReader.cpp</a>.</p>
+<p>Returns a reference to a native ROOT's TTreeReader object. </p>
+
+<p>Definition at line <a class="el" href="RootDataReader_8cpp_source.html#l00059">59</a> of file <a class="el" href="RootDataReader_8cpp_source.html">RootDataReader.cpp</a>.</p>
 
 </div>
 </div>
@@ -240,7 +308,7 @@ Public Member Functions</h2></td></tr>
 <dd>
 false if there was an error and printing couldn't happen </dd></dl>
 
-<p>Definition at line <a class="el" href="RootDataReader_8cpp_source.html#l00023">23</a> of file <a class="el" href="RootDataReader_8cpp_source.html">RootDataReader.cpp</a>.</p>
+<p>Definition at line <a class="el" href="RootDataReader_8cpp_source.html#l00027">27</a> of file <a class="el" href="RootDataReader_8cpp_source.html">RootDataReader.cpp</a>.</p>
 
 </div>
 </div>
@@ -256,6 +324,8 @@ false if there was an error and printing couldn't happen </dd></dl>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Invokes default functionality of TTree::Scan() of the loaded ROOT TTree - prints contents of the tree. </p>
 
 <p>Definition at line <a class="el" href="RootDataReader_8cpp_source.html#l00019">19</a> of file <a class="el" href="RootDataReader_8cpp_source.html">RootDataReader.cpp</a>.</p>
 
@@ -274,6 +344,8 @@ false if there was an error and printing couldn't happen </dd></dl>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Assigns given data definition to this reader - data read will be in format specified by the definition. </p>
 
 <p>Definition at line <a class="el" href="RootDataReader_8cpp_source.html#l00014">14</a> of file <a class="el" href="RootDataReader_8cpp_source.html">RootDataReader.cpp</a>.</p>
 

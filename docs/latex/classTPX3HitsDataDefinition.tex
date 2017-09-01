@@ -1,0 +1,253 @@
+\hypertarget{classTPX3HitsDataDefinition}{\section{T\+P\+X3\+Hits\+Data\+Definition Class Reference}
+\label{classTPX3HitsDataDefinition}\index{T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}}
+}
+
+
+Class defining the structure of data within root file containing only one value (of type double) -\/ To\+A.  
+
+
+
+
+{\ttfamily \#include $<$T\+P\+X3\+Hits\+Data\+Definition.\+h$>$}
+
+
+
+Inheritance diagram for T\+P\+X3\+Hits\+Data\+Definition\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{classTPX3HitsDataDefinition__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for T\+P\+X3\+Hits\+Data\+Definition\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classTPX3HitsDataDefinition__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTPX3HitsDataDefinition_a5f5720443984a9540c111dee01736513}{$\sim$\+T\+P\+X3\+Hits\+Data\+Definition} ()
+\item 
+\hyperlink{classTPX3HitsDataDefinition_a255c33b607127923b72667a846132189}{T\+P\+X3\+Hits\+Data\+Definition} (std\+::string file\+Name, std\+::string tree\+Name)
+\item 
+void $\ast$ \hyperlink{classTPX3HitsDataDefinition_adb355446aab01960b8802df55a716c25}{Get\+Primary\+Sorted\+Branch} ()
+\item 
+\hyperlink{classSingleDataEntry}{Single\+Data\+Entry} $\ast$ \hyperlink{classTPX3HitsDataDefinition_acbbf89d489d6926458356f79d18ca398}{Get\+Entry} ()
+\item 
+T\+Tree\+Reader $\ast$ \hyperlink{classRootDataDefinition_a48a885b44c954506728f71f07d927506}{Get\+Reader} ()
+\item 
+T\+Tree $\ast$ \hyperlink{classRootDataDefinition_a20ed89d6d2483a0f76cd2fb131fcc597}{Get\+Tree} ()
+\item 
+T\+File $\ast$ \hyperlink{classRootDataDefinition_ab26897ffdd1de5e6572f6067770066b3}{Get\+File} ()
+\item 
+std\+::string \hyperlink{classRootDataDefinition_acc7728b0a9315cacc6b9c1fae38ed490}{Get\+Tree\+Name} ()
+\item 
+std\+::string \hyperlink{classRootDataDefinition_a56f206839275fdf5af290b372c4d7e13}{Get\+File\+Name} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\unsigned int \hyperlink{classRootDataDefinition_a1d785995aed4450ddfa97c7064cc5dfc}{Get\+Starting\+Index} (T start\+Value)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classSingleTPX3Hit}{Single\+T\+P\+X3\+Hit} $\ast$ \hyperlink{classTPX3HitsDataDefinition_a574ec9ba8eb58d05609c203410c96078}{m\+\_\+data\+Entry} = new \hyperlink{classSingleTPX3Hit}{Single\+T\+P\+X3\+Hit}()
+\item 
+T\+Tree $\ast$ \hyperlink{classRootDataDefinition_a941ec585a2aa533bc30889a382e54f50}{m\+\_\+tree}
+\item 
+std\+::string \hyperlink{classRootDataDefinition_a46394bbb1863baa4abcd8cbd0413fa88}{m\+\_\+tree\+Name}
+\item 
+T\+File $\ast$ \hyperlink{classRootDataDefinition_af00a892a1b940abf9265066391b67304}{m\+\_\+root\+File}
+\item 
+std\+::string \hyperlink{classRootDataDefinition_a03154139db8613ec02cd57fd84d8c0e8}{m\+\_\+file\+Name}
+\item 
+T\+Tree\+Reader $\ast$ \hyperlink{classRootDataDefinition_a919827bdd245e61c0f54676d59cc7448}{m\+\_\+tree\+Reader}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class defining the structure of data within root file containing only one value (of type double) -\/ To\+A. 
+
+Definition at line 7 of file T\+P\+X3\+Hits\+Data\+Definition.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTPX3HitsDataDefinition_a5f5720443984a9540c111dee01736513}{\index{T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}!````~T\+P\+X3\+Hits\+Data\+Definition@{$\sim$\+T\+P\+X3\+Hits\+Data\+Definition}}
+\index{````~T\+P\+X3\+Hits\+Data\+Definition@{$\sim$\+T\+P\+X3\+Hits\+Data\+Definition}!T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}}
+\subsubsection[{$\sim$\+T\+P\+X3\+Hits\+Data\+Definition}]{\setlength{\rightskip}{0pt plus 5cm}T\+P\+X3\+Hits\+Data\+Definition\+::$\sim$\+T\+P\+X3\+Hits\+Data\+Definition (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTPX3HitsDataDefinition_a5f5720443984a9540c111dee01736513}
+
+
+Definition at line 3 of file T\+P\+X3\+Hits\+Data\+Definition.\+cpp.
+
+\hypertarget{classTPX3HitsDataDefinition_a255c33b607127923b72667a846132189}{\index{T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}!T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}}
+\index{T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}!T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}}
+\subsubsection[{T\+P\+X3\+Hits\+Data\+Definition}]{\setlength{\rightskip}{0pt plus 5cm}T\+P\+X3\+Hits\+Data\+Definition\+::\+T\+P\+X3\+Hits\+Data\+Definition (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{file\+Name, }
+\item[{std\+::string}]{tree\+Name}
+\end{DoxyParamCaption}
+)}}\label{classTPX3HitsDataDefinition_a255c33b607127923b72667a846132189}
+
+
+Definition at line 14 of file T\+P\+X3\+Hits\+Data\+Definition.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classTPX3HitsDataDefinition_acbbf89d489d6926458356f79d18ca398}{\index{T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}!Get\+Entry@{Get\+Entry}}
+\index{Get\+Entry@{Get\+Entry}!T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}}
+\subsubsection[{Get\+Entry}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Single\+Data\+Entry} $\ast$ T\+P\+X3\+Hits\+Data\+Definition\+::\+Get\+Entry (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classTPX3HitsDataDefinition_acbbf89d489d6926458356f79d18ca398}
+
+
+Implements \hyperlink{classRootDataDefinition_a60bb9c8884bdaca62fa342bfa6cf0bdb}{Root\+Data\+Definition}.
+
+
+
+Definition at line 28 of file T\+P\+X3\+Hits\+Data\+Definition.\+cpp.
+
+\hypertarget{classRootDataDefinition_ab26897ffdd1de5e6572f6067770066b3}{\index{T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}!Get\+File@{Get\+File}}
+\index{Get\+File@{Get\+File}!T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}}
+\subsubsection[{Get\+File}]{\setlength{\rightskip}{0pt plus 5cm}T\+File $\ast$ Root\+Data\+Definition\+::\+Get\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}}\label{classRootDataDefinition_ab26897ffdd1de5e6572f6067770066b3}
+
+
+Definition at line 14 of file Root\+Data\+Definition.\+cpp.
+
+\hypertarget{classRootDataDefinition_a56f206839275fdf5af290b372c4d7e13}{\index{T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}!Get\+File\+Name@{Get\+File\+Name}}
+\index{Get\+File\+Name@{Get\+File\+Name}!T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}}
+\subsubsection[{Get\+File\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Root\+Data\+Definition\+::\+Get\+File\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}}\label{classRootDataDefinition_a56f206839275fdf5af290b372c4d7e13}
+
+
+Definition at line 22 of file Root\+Data\+Definition.\+cpp.
+
+\hypertarget{classTPX3HitsDataDefinition_adb355446aab01960b8802df55a716c25}{\index{T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}!Get\+Primary\+Sorted\+Branch@{Get\+Primary\+Sorted\+Branch}}
+\index{Get\+Primary\+Sorted\+Branch@{Get\+Primary\+Sorted\+Branch}!T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}}
+\subsubsection[{Get\+Primary\+Sorted\+Branch}]{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ T\+P\+X3\+Hits\+Data\+Definition\+::\+Get\+Primary\+Sorted\+Branch (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classTPX3HitsDataDefinition_adb355446aab01960b8802df55a716c25}
+
+
+Implements \hyperlink{classRootDataDefinition_a720d0b9c122b778f2b338792de9e8c47}{Root\+Data\+Definition}.
+
+
+
+Definition at line 24 of file T\+P\+X3\+Hits\+Data\+Definition.\+cpp.
+
+\hypertarget{classRootDataDefinition_a48a885b44c954506728f71f07d927506}{\index{T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}!Get\+Reader@{Get\+Reader}}
+\index{Get\+Reader@{Get\+Reader}!T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}}
+\subsubsection[{Get\+Reader}]{\setlength{\rightskip}{0pt plus 5cm}T\+Tree\+Reader $\ast$ Root\+Data\+Definition\+::\+Get\+Reader (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}}\label{classRootDataDefinition_a48a885b44c954506728f71f07d927506}
+
+
+Definition at line 3 of file Root\+Data\+Definition.\+cpp.
+
+\hypertarget{classRootDataDefinition_a1d785995aed4450ddfa97c7064cc5dfc}{\index{T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}!Get\+Starting\+Index@{Get\+Starting\+Index}}
+\index{Get\+Starting\+Index@{Get\+Starting\+Index}!T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}}
+\subsubsection[{Get\+Starting\+Index}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ unsigned int Root\+Data\+Definition\+::\+Get\+Starting\+Index (
+\begin{DoxyParamCaption}
+\item[{T}]{start\+Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}}\label{classRootDataDefinition_a1d785995aed4450ddfa97c7064cc5dfc}
+
+
+Definition at line 63 of file Root\+Data\+Definition.\+h.
+
+\hypertarget{classRootDataDefinition_a20ed89d6d2483a0f76cd2fb131fcc597}{\index{T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}!Get\+Tree@{Get\+Tree}}
+\index{Get\+Tree@{Get\+Tree}!T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}}
+\subsubsection[{Get\+Tree}]{\setlength{\rightskip}{0pt plus 5cm}T\+Tree $\ast$ Root\+Data\+Definition\+::\+Get\+Tree (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}}\label{classRootDataDefinition_a20ed89d6d2483a0f76cd2fb131fcc597}
+
+
+Definition at line 7 of file Root\+Data\+Definition.\+cpp.
+
+\hypertarget{classRootDataDefinition_acc7728b0a9315cacc6b9c1fae38ed490}{\index{T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}!Get\+Tree\+Name@{Get\+Tree\+Name}}
+\index{Get\+Tree\+Name@{Get\+Tree\+Name}!T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}}
+\subsubsection[{Get\+Tree\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Root\+Data\+Definition\+::\+Get\+Tree\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inherited]}}}\label{classRootDataDefinition_acc7728b0a9315cacc6b9c1fae38ed490}
+
+
+Definition at line 18 of file Root\+Data\+Definition.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classTPX3HitsDataDefinition_a574ec9ba8eb58d05609c203410c96078}{\index{T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}!m\+\_\+data\+Entry@{m\+\_\+data\+Entry}}
+\index{m\+\_\+data\+Entry@{m\+\_\+data\+Entry}!T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}}
+\subsubsection[{m\+\_\+data\+Entry}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Single\+T\+P\+X3\+Hit}$\ast$ T\+P\+X3\+Hits\+Data\+Definition\+::m\+\_\+data\+Entry = new {\bf Single\+T\+P\+X3\+Hit}()\hspace{0.3cm}{\ttfamily [protected]}}}\label{classTPX3HitsDataDefinition_a574ec9ba8eb58d05609c203410c96078}
+
+
+Definition at line 17 of file T\+P\+X3\+Hits\+Data\+Definition.\+h.
+
+\hypertarget{classRootDataDefinition_a03154139db8613ec02cd57fd84d8c0e8}{\index{T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}!m\+\_\+file\+Name@{m\+\_\+file\+Name}}
+\index{m\+\_\+file\+Name@{m\+\_\+file\+Name}!T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}}
+\subsubsection[{m\+\_\+file\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Root\+Data\+Definition\+::m\+\_\+file\+Name\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classRootDataDefinition_a03154139db8613ec02cd57fd84d8c0e8}
+
+
+Definition at line 52 of file Root\+Data\+Definition.\+h.
+
+\hypertarget{classRootDataDefinition_af00a892a1b940abf9265066391b67304}{\index{T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}!m\+\_\+root\+File@{m\+\_\+root\+File}}
+\index{m\+\_\+root\+File@{m\+\_\+root\+File}!T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}}
+\subsubsection[{m\+\_\+root\+File}]{\setlength{\rightskip}{0pt plus 5cm}T\+File$\ast$ Root\+Data\+Definition\+::m\+\_\+root\+File\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classRootDataDefinition_af00a892a1b940abf9265066391b67304}
+
+
+Definition at line 51 of file Root\+Data\+Definition.\+h.
+
+\hypertarget{classRootDataDefinition_a941ec585a2aa533bc30889a382e54f50}{\index{T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}!m\+\_\+tree@{m\+\_\+tree}}
+\index{m\+\_\+tree@{m\+\_\+tree}!T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}}
+\subsubsection[{m\+\_\+tree}]{\setlength{\rightskip}{0pt plus 5cm}T\+Tree$\ast$ Root\+Data\+Definition\+::m\+\_\+tree\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classRootDataDefinition_a941ec585a2aa533bc30889a382e54f50}
+
+
+Definition at line 48 of file Root\+Data\+Definition.\+h.
+
+\hypertarget{classRootDataDefinition_a46394bbb1863baa4abcd8cbd0413fa88}{\index{T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}!m\+\_\+tree\+Name@{m\+\_\+tree\+Name}}
+\index{m\+\_\+tree\+Name@{m\+\_\+tree\+Name}!T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}}
+\subsubsection[{m\+\_\+tree\+Name}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Root\+Data\+Definition\+::m\+\_\+tree\+Name\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classRootDataDefinition_a46394bbb1863baa4abcd8cbd0413fa88}
+
+
+Definition at line 50 of file Root\+Data\+Definition.\+h.
+
+\hypertarget{classRootDataDefinition_a919827bdd245e61c0f54676d59cc7448}{\index{T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}!m\+\_\+tree\+Reader@{m\+\_\+tree\+Reader}}
+\index{m\+\_\+tree\+Reader@{m\+\_\+tree\+Reader}!T\+P\+X3\+Hits\+Data\+Definition@{T\+P\+X3\+Hits\+Data\+Definition}}
+\subsubsection[{m\+\_\+tree\+Reader}]{\setlength{\rightskip}{0pt plus 5cm}T\+Tree\+Reader$\ast$ Root\+Data\+Definition\+::m\+\_\+tree\+Reader\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [inherited]}}}\label{classRootDataDefinition_a919827bdd245e61c0f54676d59cc7448}
+
+
+Definition at line 53 of file Root\+Data\+Definition.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{TPX3HitsDataDefinition_8h}{T\+P\+X3\+Hits\+Data\+Definition.\+h}\item 
+src/\hyperlink{TPX3HitsDataDefinition_8cpp}{T\+P\+X3\+Hits\+Data\+Definition.\+cpp}\end{DoxyCompactItemize}
