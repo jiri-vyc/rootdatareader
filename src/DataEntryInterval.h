@@ -21,7 +21,7 @@ public:
 	/// Creates an empty interval of size 0
 	DataEntryInterval(){};
 	/// Destroys the object and disposes of all the data contained within
-	~DataEntryInterval();
+	virtual ~DataEntryInterval();
 	/// Returns the currently set datatype. Returns empty string if datatype was not set.
 	std::string GetDatatype();
 	/// Allows setting the identifier of the data in this interval. Will be returned together with the data as an object property "Datatype"
@@ -30,7 +30,7 @@ public:
 	/// Returns all the data from the interval in form of a string-encoded JSON object.
 	std::string JSONify();
 	/// Sends all the data from interval to the specified JSON Writer object.
-	void JSONify(rapidjson::Writer<rapidjson::StringBuffer> & writer);
+	virtual void JSONify(rapidjson::Writer<rapidjson::StringBuffer> & writer);
 	/// Browse the data contained within this interval in the same fashion, as ROOT's Browse() function. Shows 25 lines of complete data, then queries user if they want to show more.
 	void Print();
 	/// Converts to a classic array.

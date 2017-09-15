@@ -35,6 +35,9 @@ class RootDataReader {
 
             // If the current value meets the search condition, return. (current value is < than the searched one, the immediate next is already >=)
             if (this->GetCurrentValue<T>() < searchValue && nextValue >= searchValue){
+                // std::cout << std::setprecision(13) << "next value: " << nextValue << std::endl;
+                // std::cout << std::setprecision(13)  << "searchValue: " << searchValue << std::endl;
+                // std::cout << std::setprecision(13)  << "current value: " << this->GetCurrentValue<T>() << std::endl;
                 return currIndex;
             }
 
@@ -57,6 +60,8 @@ class RootDataReader {
         TTreeReader * GetTreeReader();
         /// Assigns given data definition to this reader - data read will be in format specified by the definition
         void SetDataDefinition(RootDataDefinition * definition);
+        /// Assigns given data interval to this reader - resulting data will be in form of this interval
+        void SetDataInterval(DataEntryInterval * interval);
         /// Invokes default functionality of TTree::Print() of the loaded ROOT TTree - prints contents of the tree
         void Print();
         /// Invokes default functionality of TTree::Scan() of the loaded ROOT TTree - prints contents of the tree
@@ -69,7 +74,7 @@ class RootDataReader {
         bool PrintFirst();
         /// Returns a single data entry at given index. Entry returned is of type specified in selected RootDataDefinition
         SingleDataEntry * GetEntryAt(unsigned int index);
-        /// Returns an interval of data entries, starting from index in first parameter, ending at index in the second parameter
+        /// Returns an interval of data entries, starting from index in first parameter, ending at index in the second parameter (not inclusive): <indexFrom, indexTo)
         DataEntryInterval * GetInterval(unsigned int indexFrom, unsigned int indexTo);
         /**
         @brief Returns an index of entry with its value closest to given searchValue
@@ -82,5 +87,13 @@ class RootDataReader {
             Long64_t entriesCnt = this->m_treeReader->GetEntries(false);
             Long64_t currIndex = entriesCnt/2;
             return this->BinarySearchForValue<T>(searchValue, currIndex, 0, entriesCnt);
+        }
+        /// Searches for interval, where the values are in between supplied parameters. Uses PrimarySortedBranch of the data definition
+        template <typename T>
+        DataEntryInterval * GetIntervalBySearch(T valueFrom, T valueTo){
+
+            std::cout << this->GetStartingIndex<T>(valueTo) << std::endl;
+
+            return this->GetInterval(this->GetStartingIndex<T>(valueFrom), this->GetStartingIndex<T>(valueTo) + 1);
         }
 };

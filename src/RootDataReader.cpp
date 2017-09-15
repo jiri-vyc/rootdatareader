@@ -16,6 +16,11 @@ void RootDataReader::SetDataDefinition(RootDataDefinition * definition){
     this->m_treeReader = definition->GetReader();
 }
 
+void RootDataReader::SetDataInterval(DataEntryInterval * interval){
+    this->m_interval = interval;
+}
+
+
 void RootDataReader::Scan(){
     this->m_definition->GetTree()->Scan();
 }
@@ -52,10 +57,10 @@ SingleDataEntry * RootDataReader::GetEntryAt(unsigned int index){
 
 DataEntryInterval * RootDataReader::GetInterval(unsigned int indexFrom, unsigned int indexTo){
     SingleDataEntry * currEntry;
-    if (this->m_interval) {
-        delete this->m_interval;
+    if (!this->m_interval) {
+        this->m_interval = new DataEntryInterval();
     }
-    this->m_interval = new DataEntryInterval();
+    this->m_interval->Clear();
     for (unsigned int i = indexFrom; i < indexTo; i++){
         currEntry = this->GetEntryAt(i);
         if (currEntry){
