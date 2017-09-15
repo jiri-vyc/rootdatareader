@@ -75,9 +75,22 @@ void DataEntryInterval::Print()
 	}
 }
 
+DataEntryInterval* DataEntryInterval::SetDatatype(std::string inDatatype){
+	this->datatype = inDatatype;
+	return this;
+}
+
+std::string DataEntryInterval::GetDatatype(){
+	return this->datatype;
+}
+
 void DataEntryInterval::JSONify(Writer<StringBuffer> & writer)
 {
 	writer.StartObject();
+	if (this->datatype != ""){
+		writer.Key("Datatype");
+		writer.String(this->GetDatatype().c_str());
+	}
 	writer.Key("Size");
 	writer.Uint(this->Size());
 	writer.Key("Entries");

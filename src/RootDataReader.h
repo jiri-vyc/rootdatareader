@@ -57,6 +57,8 @@ class RootDataReader {
         TTreeReader * GetTreeReader();
         /// Assigns given data definition to this reader - data read will be in format specified by the definition
         void SetDataDefinition(RootDataDefinition * definition);
+        /// Invokes default functionality of TTree::Print() of the loaded ROOT TTree - prints contents of the tree
+        void Print();
         /// Invokes default functionality of TTree::Scan() of the loaded ROOT TTree - prints contents of the tree
         void Scan();
         /// Prints a list of all branches within the loaded ROOT TTree, uses TTree::GetListOfBranches() - doesn't have to correspond with used data definition!
@@ -67,6 +69,7 @@ class RootDataReader {
         bool PrintFirst();
         /// Returns a single data entry at given index. Entry returned is of type specified in selected RootDataDefinition
         SingleDataEntry * GetEntryAt(unsigned int index);
+        /// Returns an interval of data entries, starting from index in first parameter, ending at index in the second parameter
         DataEntryInterval * GetInterval(unsigned int indexFrom, unsigned int indexTo);
         /**
         @brief Returns an index of entry with its value closest to given searchValue

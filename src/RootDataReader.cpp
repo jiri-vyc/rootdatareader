@@ -20,6 +20,10 @@ void RootDataReader::Scan(){
     this->m_definition->GetTree()->Scan();
 }
 
+void RootDataReader::Print(){
+    this->m_definition->GetTree()->Print();
+}
+
 void RootDataReader::GetListOfBranches(){
     this->m_definition->GetTree()->GetListOfBranches()->Print();
 }
@@ -35,19 +39,30 @@ bool RootDataReader::PrintFirst(){
 
 SingleDataEntry * RootDataReader::GetEntryAt(unsigned int index){
     if (!this->AllReadyToRead()){
+        std::cout << "Error: data definition or data reader has not been set." << std::endl;
         return nullptr;
     }
-    this->m_treeReader->SetEntry(index);
-    return this->m_definition->GetEntry();
+    // SetEntry returns EEntryStatus, where kEntryValid = 0. All other are error codes.
+    if (!this->m_treeReader->SetEntry(index)){
+        return this->m_definition->GetEntry();
+    }
+    std::cout << "Error getting an entry from the tree. You can use RootDataReader::Print() to check available branches." << std::endl;
+    return nullptr;
 }
 
 DataEntryInterval * RootDataReader::GetInterval(unsigned int indexFrom, unsigned int indexTo){
+    SingleDataEntry * currEntry;
     if (this->m_interval) {
         delete this->m_interval;
     }
     this->m_interval = new DataEntryInterval();
     for (unsigned int i = indexFrom; i < indexTo; i++){
-        this->m_interval->PushBack(this->GetEntryAt(i));
+        currEntry = this->GetEntryAt(i);
+        if (currEntry){
+            this->m_interval->PushBack(currEntry);
+        } else {
+            break;
+        }
     }
     return this->m_interval;
 }

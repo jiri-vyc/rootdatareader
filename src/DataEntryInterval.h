@@ -15,11 +15,18 @@ class DataEntryInterval{
 private:
 	/// The internal standard vector collection, which is being decorated, providing all the base functionality.
 	std::vector<SingleDataEntry*> dataVector;
+	/// Identifier of the datatype stored in this interval. Is not required.
+	std::string datatype = "";
 public:
 	/// Creates an empty interval of size 0
 	DataEntryInterval(){};
 	/// Destroys the object and disposes of all the data contained within
 	~DataEntryInterval();
+	/// Returns the currently set datatype. Returns empty string if datatype was not set.
+	std::string GetDatatype();
+	/// Allows setting the identifier of the data in this interval. Will be returned together with the data as an object property "Datatype"
+	/// Returns this instance, allows chaining other method usages
+	DataEntryInterval* SetDatatype(std::string);
 	/// Returns all the data from the interval in form of a string-encoded JSON object.
 	std::string JSONify();
 	/// Sends all the data from interval to the specified JSON Writer object.
@@ -28,7 +35,6 @@ public:
 	void Print();
 	/// Converts to a classic array.
 	SingleDataEntry ** ToArray();
-
 	/// std::vector's functionality of the method of the same name
 	void PushBack(SingleDataEntry * elem);
 	/// std::vector's functionality of the method of the same name
