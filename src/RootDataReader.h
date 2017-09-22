@@ -35,9 +35,6 @@ class RootDataReader {
 
             // If the current value meets the search condition, return. (current value is < than the searched one, the immediate next is already >=)
             if (this->GetCurrentValue<T>() < searchValue && nextValue >= searchValue){
-                // std::cout << std::setprecision(13) << "next value: " << nextValue << std::endl;
-                // std::cout << std::setprecision(13)  << "searchValue: " << searchValue << std::endl;
-                // std::cout << std::setprecision(13)  << "current value: " << this->GetCurrentValue<T>() << std::endl;
                 return currIndex;
             }
 
@@ -91,9 +88,6 @@ class RootDataReader {
         /// Searches for interval, where the values are in between supplied parameters. Uses PrimarySortedBranch of the data definition
         template <typename T>
         DataEntryInterval * GetIntervalBySearch(T valueFrom, T valueTo){
-
-            std::cout << this->GetStartingIndex<T>(valueTo) << std::endl;
-
             return this->GetInterval(this->GetStartingIndex<T>(valueFrom), this->GetStartingIndex<T>(valueTo) + 1);
         }
 };
