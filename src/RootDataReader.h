@@ -20,8 +20,6 @@ class RootDataReader {
         TTreeReader * m_treeReader;
         /// Check if all necessary requirements are set up for this reader to begin reading
         bool AllReadyToRead();
-        /// Get current value of primary sorted branch of currently attached DataDefinition
-
         /// Perform the binary search for provided value on the current tree and find the starting index
         template <typename T>
         Long64_t BinarySearchForValue(T searchValue, Long64_t currIndex, Long64_t minIndex, Long64_t maxIndex){
@@ -45,7 +43,7 @@ class RootDataReader {
                 return this->BinarySearchForValue(searchValue, (currIndex + minIndex) / 2, minIndex, currIndex);
             }
         }
-        /// Returns a current value of the primary sorted branch of the type specified
+        /// Returns a current value of the primary sorted branch of currently attached DataDefinition. Value is of the type specified.
         template <typename T>
         T GetCurrentValue(){
             return **((TTreeReaderValue<T>*)this->m_definition->GetPrimarySortedBranch());
@@ -83,6 +81,9 @@ class RootDataReader {
         unsigned int GetStartingIndex(T searchValue){
             Long64_t entriesCnt = this->m_treeReader->GetEntries(false);
             Long64_t currIndex = entriesCnt/2;
+            if (this->GetEntryAt(0) == nullptr){
+                return 0;
+            }
             return this->BinarySearchForValue<T>(searchValue, currIndex, 0, entriesCnt);
         }
         /// Searches for interval, where the values are in between supplied parameters. Uses PrimarySortedBranch of the data definition

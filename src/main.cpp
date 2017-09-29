@@ -14,11 +14,11 @@ int main(void){
     RootDataDefinition * definition;        // General definition of data 
     RootDataReader * dataReader;            // The reader
     dataReader = new RootDataReader();      // Initialize
-    //definition = new TPX3HitsDataDefinition("data/L07W005_Bias150V.root", "clusteredData");  // Assigning concrete data definition
-    definition = new TPX3HitsDataDefinition("data/testFile1.root", "Datatree");
-    DataEntryInterval * interval = new TPX3HitsInterval();
+    definition = new OnlyToADataDefinition("data/L07W005_Bias150V.root", "clusteredData");  // Assigning concrete data definition
+    //definition = new TPX3HitsDataDefinition("data/testFile1.root", "Datatree");
+    //DataEntryInterval * interval = new TPX3HitsInterval();
 
-    dataReader->SetDataInterval(interval);
+    //dataReader->SetDataInterval(interval);
 
     dataReader->SetDataDefinition(definition);  // Tell the reader to use this data definition
 

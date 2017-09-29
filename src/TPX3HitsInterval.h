@@ -19,10 +19,14 @@ class TPX3HitsInterval: public DataEntryInterval{
             writer.StartObject();
             writer.Key("Datatype");
             writer.String("TPX3Hits");
+            writer.Key("TriggerCount");
+            writer.Uint(0);
             writer.Key("Size");
             writer.Uint(this->Size());
             writer.Key("SumEnergy");
             writer.Uint(this->SumEnergy());
+            writer.Key("StartTime");
+            writer.Double(0);
             writer.Key("Pixels");
             writer.StartArray();
             for (unsigned int i = 0; i < this->Size(); i++)
