@@ -4,10 +4,15 @@ CC=g++
 CFLAGS=-Wall -pedantic -ggdb `root-config --cflags` -c
 
 all: rootdatareader
+
 rootdatareader: main.o reader.o definition.o pixeltoa.o definitiontoa.o interval.o tpx3hit.o definitiontpx3hit.o cluster.o definitionCluters.o
 	$(CC) `root-config --libs --glibs` -lTreePlayer -o release/rootdatareader.o build/*.o
+example1: example1.o reader.o definition.o pixeltoa.o definitiontoa.o interval.o tpx3hit.o definitiontpx3hit.o cluster.o definitionCluters.o
+	$(CC) `root-config --libs --glibs` -lTreePlayer -o release/rootdatareader.o build/*.o
 main.o:
-	$(CC) $(CFLAGS) src/main.cpp -o build/main.o
+	$(CC) $(CFLAGS) examples/main.cpp -o build/main.o
+example1.o:
+	$(CC) $(CFLAGS) examples/example1.cpp -o build/main.o
 reader.o:
 	$(CC) $(CFLAGS) src/RootDataReader.cpp -o build/RootDataReader.o
 definition.o:

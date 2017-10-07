@@ -67,6 +67,9 @@ class RootDataReader {
         /// @return true if success
         /// @return false if there was an error and printing couldn't happen
         bool PrintFirst();
+        /// Checks the existence of object (e.g. TTree) with a given name within a given root file
+        /// @return true if object exists, false otherwise
+        bool Exists(const char * fileName, const char * objectName);
         /// Returns a single data entry at given index. Entry returned is of type specified in selected RootDataDefinition
         SingleDataEntry * GetEntryAt(unsigned int index);
         /// Returns an interval of data entries, starting from index in first parameter, ending at index in the second parameter (not inclusive): <indexFrom, indexTo)

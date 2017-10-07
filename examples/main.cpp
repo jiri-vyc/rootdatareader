@@ -1,8 +1,8 @@
-#include "RootDataReader.h"
-#include "OnlyToADataDefinition.h"
-#include "TPX3HitsDataDefinition.h"
-#include "ClustersDataDefinition.h"
-#include "TPX3HitsInterval.h"
+#include "../src/RootDataReader.h"
+#include "../src/OnlyToADataDefinition.h"
+#include "../src/TPX3HitsDataDefinition.h"
+#include "../src/ClustersDataDefinition.h"
+#include "../src/TPX3HitsInterval.h"
 
 #include <typeinfo>
 #include <iostream>
@@ -15,6 +15,7 @@ int main(void){
     RootDataDefinition * definition;        // General definition of data 
     RootDataReader * dataReader;            // The reader
     dataReader = new RootDataReader();      // Initialize
+    std::cout << dataReader->Exists("data/L07W005_Bias150V.root", "clusteredData") << std::endl;
     definition = new ClustersDataDefinition("data/L07W005_Bias150V.root", "clusteredData");  // Assigning concrete data definition
     //definition = new TPX3HitsDataDefinition("data/testFile1.root", "Datatree");
     //DataEntryInterval * interval = new TPX3HitsInterval();

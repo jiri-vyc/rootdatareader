@@ -79,3 +79,11 @@ bool RootDataReader::AllReadyToRead(){
 TTreeReader * RootDataReader::GetTreeReader(){
     return this->m_treeReader;
 }
+
+
+bool RootDataReader::Exists(const char * fileName, const char * objectName){
+    TFile * f = new TFile(fileName);
+    bool retVal = f->GetListOfKeys()->Contains(objectName);
+    delete f;
+    return retVal;
+}
