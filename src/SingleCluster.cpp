@@ -20,6 +20,7 @@ SingleCluster::SingleCluster(SingleCluster * otherEntry){
     this->SetPixX(otherEntry->GetPixX());
     this->SetPixY(otherEntry->GetPixY());
     this->SetTriggerNo(otherEntry->GetTriggerNo());
+    this->SetMinToA(otherEntry->GetMinToA());
 }
 
 SingleCluster::~SingleCluster(){
@@ -30,12 +31,16 @@ SingleCluster::~SingleCluster(){
 }
 
 void SingleCluster::Print(std::ostream& os) const{
-    os << this->GetClstrSize() << " ";
-    // os << this->GetToA() << " ";
-    // os << this->GetToT() << " ";
-    // os << this->GetPixX() << " ";
-    // os << this->GetPixY() << " ";
-    os << this->GetTriggerNo() << " ";
+    for (Int_t i = 0; i < this->GetClstrSize(); i++)
+    {
+        os << i << " ";
+        os << this->GetClstrSize() << " ";
+        os << this->GetToA()[i] << " ";
+        os << this->GetToT()[i] << " ";
+        os << this->GetPixX()[i] << " ";
+        os << this->GetPixY()[i] << " ";
+        os << this->GetTriggerNo() << " " << std::endl;
+    }
 }
 
 void SingleCluster::JSONify(Writer<StringBuffer> & writer){
@@ -72,6 +77,8 @@ void SingleCluster::JSONify(Writer<StringBuffer> & writer){
     writer.EndArray();
 	writer.Key("TriggerNo");
 	writer.Int(this->GetTriggerNo());
+	writer.Key("min_ToA");
+    writer.Double(this->GetMinToA());
     writer.EndObject();
 }
 
@@ -167,4 +174,12 @@ Int_t SingleCluster::GetTriggerNo() const{
 
 void SingleCluster::SetTriggerNo(Int_t triggerNo){
     this->triggerNo = triggerNo;
+}
+
+Double_t SingleCluster::GetMinToA() const{
+    return this->min_ToA;
+}
+
+void SingleCluster::SetMinToA(Double_t min_ToA){
+    this->min_ToA = min_ToA;
 }

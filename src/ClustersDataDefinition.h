@@ -13,6 +13,7 @@ class ClustersDataDefinition: public RootDataDefinition {
         TTreeReaderArray<Short_t> * PixX;
         TTreeReaderArray<Short_t> * PixY;
         TTreeReaderValue<Int_t> * triggerNo;
+        TTreeReaderValue<Double_t> * min_ToA;
         TTreeReaderValue<ULong64_t> * coincidence_group;
         TTreeReaderValue<Short_t> * coincidence_group_size;
     protected:

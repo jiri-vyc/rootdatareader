@@ -14,6 +14,7 @@ private:
 	Short_t * PixX;
 	Short_t * PixY;
     Int_t triggerNo;
+	Double_t min_ToA;
 protected:
 	void Print(std::ostream& os) const;
 public:
@@ -46,4 +47,7 @@ public:
 
 	Int_t GetTriggerNo() const;
 	void SetTriggerNo(Int_t triggerNo);
+
+	Double_t GetMinToA() const;
+	void SetMinToA(Double_t ToA);
 };
