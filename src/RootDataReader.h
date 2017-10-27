@@ -92,6 +92,10 @@ class RootDataReader {
         /// Searches for interval, where the values are in between supplied parameters. Uses PrimarySortedBranch of the data definition
         template <typename T>
         DataEntryInterval * GetIntervalBySearch(T valueFrom, T valueTo){
-            return this->GetInterval(this->GetStartingIndex<T>(valueFrom), this->GetStartingIndex<T>(valueTo) + 1);
+            unsigned int realFromValue = this->GetStartingIndex<T>(valueFrom);
+            if (realFromValue != 0){
+                realFromValue += 1;
+            }
+            return this->GetInterval(realFromValue, this->GetStartingIndex<T>(valueTo) + 1);
         }
 };

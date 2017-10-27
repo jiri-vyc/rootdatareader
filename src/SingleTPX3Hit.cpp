@@ -32,9 +32,9 @@ void SingleTPX3Hit::Print(std::ostream& os) const{
 
 void SingleTPX3Hit::JSONify(Writer<StringBuffer> & writer){
     writer.StartObject();
-	writer.Key("PixX");
+	writer.Key("pixX");
 	writer.Int(this->GetPixX());
-	writer.Key("PixY");
+	writer.Key("pixY");
 	writer.Int(this->GetPixY());
 	writer.Key("ToA");
 	writer.Double(this->GetToA());

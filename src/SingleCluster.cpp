@@ -47,14 +47,14 @@ void SingleCluster::JSONify(Writer<StringBuffer> & writer){
     writer.StartObject();
     writer.Key("clstrSize");
 	writer.Int(this->GetClstrSize());
-	writer.Key("PixX");
+	writer.Key("pixX");
     writer.StartArray();
     for (Int_t i = 0; i < this->GetClstrSize(); i++)
     {
 	    writer.Int(this->GetPixX()[i]);
     }
     writer.EndArray();
-	writer.Key("PixY");
+	writer.Key("pixY");
     writer.StartArray();
     for (Int_t i = 0; i < this->GetClstrSize(); i++)
     {
