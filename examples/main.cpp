@@ -14,19 +14,23 @@ int main(void){
 
     RootDataDefinition * definition;        // General definition of data 
     RootDataReader * dataReader;            // The reader
-    dataReader = new RootDataReader();      // Initialize
-    std::cout << dataReader->Exists("data/L07W005_Bias150V.root", "clusteredData") << std::endl;
-    definition = new ClustersDataDefinition("data/L07W005_Bias150V.root", "clusteredData");  // Assigning concrete data definition
-    //definition = new TPX3HitsDataDefinition("data/testFile1.root", "Datatree");
-    //DataEntryInterval * interval = new TPX3HitsInterval();
+    dataReader = new RootDataReader();      // Initialize the reader
+    // DataEntryInterval * interval;        // General interval
 
-    //dataReader->SetDataInterval(interval);
 
+    if (dataReader->Exists("data/L07W005_Bias150V.root", "clusteredData")){
+        definition = new ClustersDataDefinition("data/L07W005_Bias150V.root", "clusteredData");  // Assigning concrete data definition
+    } else if (dataReader->Exists("data/L07W005_Bias150V.root", "Datatree")){
+        definition = new TPX3HitsDataDefinition("data/L07W005_Bias150V.root", "Datatree");
+        interval = new TPX3HitsInterval();
+    } else {
+        std::cout << "Error: no appropriate tree found in the root file." << std::endl;
+    }
+
+    // dataReader->SetDataInterval(interval);
     dataReader->SetDataDefinition(definition);  // Tell the reader to use this data definition
 
-    cout << dataReader->GetEntryAt(0)->JSONify() << endl;
-    //cout << dataReader->GetInterval(0, 5)->SetDatatype("TPX3Hits")->JSONify() << endl;
-    //cout << dataReader->GetIntervalBySearch<Double_t>(0, 481258120.3125)->SetDatatype("TPX3Hits")->JSONify() << endl;
+    cout << dataReader->GetInterval(0, 5)->JSONify() << endl;
 
     cout << "Done." << endl;
 
