@@ -15,7 +15,7 @@ int main(void){
     RootDataDefinition * definition;        // General definition of data 
     RootDataReader * dataReader;            // The reader
     dataReader = new RootDataReader();      // Initialize the reader
-    // DataEntryInterval * interval;        // General interval
+    DataEntryInterval * interval;        // General interval
 
 
     if (dataReader->Exists("data/L07W005_Bias150V.root", "clusteredData")){
