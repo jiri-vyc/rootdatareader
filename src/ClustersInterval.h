@@ -12,12 +12,16 @@ class ClustersInterval: public DataEntryInterval{
             }
             return sum;
         }
+        unsigned int SumEnergy()
+        {
+            return 42;
+        }
     public:
         void JSONify(Writer<StringBuffer> & writer)
         {
             writer.StartObject();
             writer.Key("Datatype");
-            writer.String("TPX3Hits");
+            writer.String("TPX3Clusters");
             writer.Key("TriggerCount");
             writer.Uint(1);
             writer.Key("HitsCount");
